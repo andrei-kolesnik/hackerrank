@@ -9,5 +9,11 @@
 * unordered_map<string, string>
 
 ## Classes
+### [Exceptional Server](https://www.hackerrank.com/challenges/exceptional-server/problem) [STL](Class.Exceptional-Server.STL)
+* throw
+* try-catch
+* standard exception
+* other exception
+
 ### [Inherited Code](https://www.hackerrank.com/challenges/inherited-code/problem) [STL](String.Attribute-Parser.STL)
 * custom exception with parameters

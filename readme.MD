@@ -34,6 +34,12 @@ Difficulty: Hard
 * double-linked lists
 * `map`
 
+### [Accessing Inherited Functions](https://www.hackerrank.com/challenges/accessing-inherited-functions/problem) :: [[C++ STL]](Class.Accessing-Inherited-Functions.STL)
+Difficulty: Medium
+* multiple inheritance
+* private, protected, and public functions
+
+## Containers
 ### [Deque](https://www.hackerrank.com/challenges/deque-stl/problem) :: [[C++ STL]](Container.Deque.STL)
 Difficulty: Medium
 * `deque<int>`

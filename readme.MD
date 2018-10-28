@@ -39,6 +39,12 @@ Difficulty: Medium
 * multiple inheritance
 * private, protected, and public functions
 
+### [Magic Spells](https://www.hackerrank.com/challenges/magic-spells/problem) :: [[C++ STL]](Class.Magic-Spells.STL)
+Difficulty: Hard
+* `dynamic_cast`
+* 2-D `vector`
+* [Longest common subsequence problem](https://en.wikipedia.org/wiki/Longest_common_subsequence_problem)
+
 ## Containers
 ### [Deque](https://www.hackerrank.com/challenges/deque-stl/problem) :: [[C++ STL]](Container.Deque.STL)
 Difficulty: Medium

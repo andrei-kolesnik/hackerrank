@@ -18,7 +18,7 @@ Difficulty: Medium
 
 ### [Inherited Code](https://www.hackerrank.com/challenges/inherited-code/problem) :: [[C++ STL]](Class.Inherited-Code.STL)
 Difficulty: Medium
-* custom exception with parameters
+* custom exceptions with parameters
 
 ### [Virtual Functions](https://www.hackerrank.com/challenges/virtual-functions/problem) :: [[C++ STL]](Class.Virtual-Functions.STL)
 Difficulty: Medium
@@ -31,5 +31,9 @@ Difficulty: Medium
 Difficulty: Hard
 * abstract functions
 * virtual functions
-* double-linked list
+* double-linked lists
 * `map`
+
+### [Deque](https://www.hackerrank.com/challenges/deque-stl/problem) :: [[C++ STL]](Container.Deque.STL)
+Difficulty: Medium
+* `deque<int>`

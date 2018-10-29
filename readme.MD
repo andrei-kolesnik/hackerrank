@@ -44,6 +44,11 @@ Difficulty: Medium
 * operator overloading
 * 2-D `vector`
 
+### [Messages Order](https://www.hackerrank.com/challenges/messages-order/problem) :: [[C++ STL]](Class.Messages-Order.STL)
+Difficulty: Medium
+* static fields
+* operator overloading
+
 ### [Magic Spells](https://www.hackerrank.com/challenges/magic-spells/problem) :: [[C++ STL]](Class.Magic-Spells.STL)
 Difficulty: Hard
 * `dynamic_cast`

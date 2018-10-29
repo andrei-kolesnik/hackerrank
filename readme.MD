@@ -39,6 +39,11 @@ Difficulty: Medium
 * multiple inheritance
 * private, protected, and public functions
 
+### [Operator Overloading](https://www.hackerrank.com/challenges/operator-overloading/problem) :: [[C++ STL]](Class.Operator-Overloading.STL)
+Difficulty: Medium
+* operator overloading
+* 2-D `vector`
+
 ### [Magic Spells](https://www.hackerrank.com/challenges/magic-spells/problem) :: [[C++ STL]](Class.Magic-Spells.STL)
 Difficulty: Hard
 * `dynamic_cast`

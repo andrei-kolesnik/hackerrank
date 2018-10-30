@@ -59,3 +59,9 @@ Difficulty: Hard
 ### [Deque](https://www.hackerrank.com/challenges/deque-stl/problem) :: [[C++ STL]](Container.Deque.STL)
 Difficulty: Medium
 * `deque<int>`
+
+## Algorithms
+### [Attending Workshops](https://www.hackerrank.com/challenges/attending-workshops/problem) :: [[C++ STL]](Algorithm.Attending-Workshops.STL)
+* [Interval scheduling maximization problem](https://en.wikipedia.org/wiki/Interval_scheduling)
+* initializing an array of unknown size
+* `vector` sort with a custom function

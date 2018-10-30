@@ -49,6 +49,10 @@ Difficulty: Medium
 * static fields
 * operator overloading
 
+### [Template Specialization](https://www.hackerrank.com/challenges/cpp-class-template-specialization/problem) :: [[C++ STL]](Class.Template-Specialization.STL)
+* `enum`
+* class/struct template specialization
+
 ### [Magic Spells](https://www.hackerrank.com/challenges/magic-spells/problem) :: [[C++ STL]](Class.Magic-Spells.STL)
 Difficulty: Hard
 * `dynamic_cast`

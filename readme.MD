@@ -53,6 +53,11 @@ Difficulty: Medium
 * `enum`
 * class/struct template specialization
 
+### [Variadics](https://www.hackerrank.com/challenges/cpp-variadics/problem) :: [[C++ STL]](Class.Variadics.STL)
+* template parameter packs
+* variadic templates
+* non-type template parameters
+
 ### [Magic Spells](https://www.hackerrank.com/challenges/magic-spells/problem) :: [[C++ STL]](Class.Magic-Spells.STL)
 Difficulty: Hard
 * `dynamic_cast`

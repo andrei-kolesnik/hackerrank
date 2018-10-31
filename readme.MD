@@ -74,3 +74,5 @@ Difficulty: Medium
 * [Interval scheduling maximization problem](https://en.wikipedia.org/wiki/Interval_scheduling)
 * initializing an array of unknown size
 * `vector` sort with a custom function
+
+###[Bit Array](https://www.hackerrank.com/challenges/bitset-1/problem) :: [[C++ STL]](Class.Variadics.STL)

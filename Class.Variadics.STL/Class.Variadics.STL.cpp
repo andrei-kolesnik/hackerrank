@@ -25,7 +25,6 @@ int reversed_binary_value()
 {
 	return reversed_binary_value<digit2, digits...>() * 2 + digit1;
 }
-
 /*Version 2: no recursion
 template<bool... digits> int reversed_binary_value() {
 	int sum = 0; int product = 1;

@@ -75,4 +75,6 @@ Difficulty: Medium
 * initializing an array of unknown size
 * `vector` sort with a custom function
 
-###[Bit Array](https://www.hackerrank.com/challenges/bitset-1/problem) :: [[C++ STL]](Class.Variadics.STL)
+###[Bit Array](https://www.hackerrank.com/challenges/bitset-1/problem) :: [[C++ STL]](Algorithm.Bit-Array.STL)
+* bit operations
+* Set bits in an integer / Brian Kernighan's Algorithm

@@ -75,6 +75,10 @@ Difficulty: Medium
 * initializing an array of unknown size
 * `vector` sort with a custom function
 
-###[Bit Array](https://www.hackerrank.com/challenges/bitset-1/problem) :: [[C++ STL]](Algorithm.Bit-Array.STL)
+### [Bit Array](https://www.hackerrank.com/challenges/bitset-1/problem) :: [[C++ STL]](Algorithm.Bit-Array.STL)
 * bit operations
 * Set bits in an integer / Brian Kernighan's Algorithm
+
+### [Construct the Array](https://www.hackerrank.com/challenges/construct-the-array/problem) :: [[C++ STL]](Algorithm.Construct-Array.STL)
+* construct an array with `n` elements such that each element between `1` and `k`, inclusive
+* the first and last elements of the array to be `1` and `x`

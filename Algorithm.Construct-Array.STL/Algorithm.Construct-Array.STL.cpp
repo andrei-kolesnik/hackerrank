@@ -14,11 +14,11 @@
 //Sample Input 2
 //761 99 1
 //Sample Output 2
-//236568308 //my:340560813
+//236568308 
 
-//Sample Input 5
+//Sample Input 3
 //17048 14319 1
-//Sample Output 5
+//Sample Output 3
 //803254122
 
 #include <iostream>
@@ -33,8 +33,8 @@ using namespace std;
 vector<string> split_string(string);
 
 // Complete the countArray function below.
-#define MODULO 1000000007
-/*
+#define MODULO 1000000007l
+/* version 1: full array, too slow
 long countArray(int n, int k, int x) {
 	long** A = new long*[n];
 	int i, j, l;
@@ -75,7 +75,7 @@ long countArray(int n, int k, int x) {
 	return result;
 }
 */
-
+/*version 2: two rows, n columns - still too slow for large k's
 long countArray(int n, int k, int x) {
 	long** A = new long*[2];
 	int i, j, l;
@@ -113,10 +113,29 @@ long countArray(int n, int k, int x) {
 
 	return result;
 }
+*/
+long long countArray(int n, int k, int x) {
+	long long A0 = 0, A1 = 1, At;
+	long long k1 = k - 1, k2 = k - 2;
+
+	for (int i = 1; i < n - 1; i++)
+	{
+		At = (A0 * k2 + A1) % MODULO;
+		A1 = (A0 * k1) % MODULO;
+		A0 = At;
+	}
+
+	long long result;
+	if (x == 1)
+		result = (A0 * k1) % MODULO;
+	else
+		result = (A0 * k2 + A1) % MODULO;
+
+	return result;
+}
 
 int main()
 {
-/*
 	ofstream fout(getenv("OUTPUT_PATH"));
 
 	string nkx_temp;
@@ -129,15 +148,16 @@ int main()
 	int x = stoi(nkx[2]);
 
 	long answer = countArray(n, k, x);
-*/
-	//long answer = countArray(4, 5, 5);
-	//long answer = countArray(4, 3, 2);
-	//long answer = countArray(761, 99, 1); //236568308
-	long answer = countArray(17048, 14319, 1); //803254122
 
-	cout << answer << "\n"; ///###fout
-	getchar();
-//	fout.close();
+	//long answer = countArray(4, 3, 2); //3
+	//long answer = countArray(4, 5, 5); //13
+	//long answer = countArray(5, 5, 5); //51
+	//long answer = countArray(6, 5, 1); //205
+	//long answer = countArray(761, 99, 1); //236568308
+	//long answer = countArray(17048, 14319, 1); //803254122
+
+	fout << answer << "\n"; 
+	fout.close();
 
 	return 0;
 }

@@ -51,9 +51,11 @@ Difficulty: Medium
 
 ### [Template Specialization](https://www.hackerrank.com/challenges/cpp-class-template-specialization/problem) :: [[C++ STL]](Class.Template-Specialization.STL)
 * `enum`
+Difficulty: Medium
 * class/struct template specialization
 
 ### [Variadics](https://www.hackerrank.com/challenges/cpp-variadics/problem) :: [[C++ STL]](Class.Variadics.STL)
+Difficulty: Hard
 * template parameter packs
 * variadic templates
 * non-type template parameters
@@ -71,14 +73,21 @@ Difficulty: Medium
 
 ## Algorithms
 ### [Attending Workshops](https://www.hackerrank.com/challenges/attending-workshops/problem) :: [[C++ STL]](Algorithm.Attending-Workshops.STL)
+Difficulty: Medium
 * [Interval scheduling maximization problem](https://en.wikipedia.org/wiki/Interval_scheduling)
 * initializing an array of unknown size
 * `vector` sort with a custom function
 
 ### [Bit Array](https://www.hackerrank.com/challenges/bitset-1/problem) :: [[C++ STL]](Algorithm.Bit-Array.STL)
+Difficulty: Hard
 * bit operations
 * Set bits in an integer / Brian Kernighan's Algorithm
 
 ### [Construct the Array](https://www.hackerrank.com/challenges/construct-the-array/problem) :: [[C++ STL]](Algorithm.Construct-Array.STL)
+Difficulty: Medium
 * construct an array with `n` elements such that each element between `1` and `k`, inclusive
 * the first and last elements of the array to be `1` and `x`
+
+### [Array Manipulation](https://www.hackerrank.com/challenges/crush/problem) :: [[C++ STL]](Algorithm.Array-Manipulation.STL)
+Difficulty: Hard
+* [Difference Array | Range update query in O(1)](https://www.geeksforgeeks.org/difference-array-range-update-query-o1/)

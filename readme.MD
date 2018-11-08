@@ -91,3 +91,8 @@ Difficulty: Medium
 ### [Array Manipulation](https://www.hackerrank.com/challenges/crush/problem) :: [[C++ STL]](Algorithm.Array-Manipulation.STL)
 Difficulty: Hard
 * [Difference Array | Range update query in O(1)](https://www.geeksforgeeks.org/difference-array-range-update-query-o1/)
+
+### [Extra Long Factorials](https://www.hackerrank.com/challenges/extra-long-factorials/problem) :: [[C++ STL]](Algorithm.Extra-Long-Factorials.STL)
+Difficulty: Medium
+* big integers
+* `vector.reverse_iterator`

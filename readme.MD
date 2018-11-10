@@ -64,6 +64,9 @@ Solutions for the practice problems on HackerRank.
 ### [Binary Search Tree : Lowest Common Ancestor](https://www.hackerrank.com/challenges/binary-search-tree-lowest-common-ancestor/problem) :: [[C++ STL]](Algorithm.BST-Lowest-Common-Ancestor.STL) {easy}
 * Binary Search Tree
 
+### [Is This a Binary Search Tree?](https://www.hackerrank.com/challenges/is-binary-search-tree/problem) :: [[C++ STL]](Algorithm.Is-this-BST.STL) {medium}
+* Binary Search Tree
+
 ### [Attending Workshops](https://www.hackerrank.com/challenges/attending-workshops/problem) :: [[C++ STL]](Algorithm.Attending-Workshops.STL) {medium}
 * [Interval scheduling maximization problem](https://en.wikipedia.org/wiki/Interval_scheduling)
 * initializing an array of unknown size

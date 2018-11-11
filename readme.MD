@@ -86,3 +86,7 @@ Solutions for the practice problems on HackerRank.
 ### [Extra Long Factorials](https://www.hackerrank.com/challenges/extra-long-factorials/problem) :: [[C++ STL]](Algorithm.Extra-Long-Factorials.STL) {medium}
 * big integers
 * `vector.reverse_iterator`
+
+## SQL
+
+### [Weather Observation Station 4](https://www.hackerrank.com/challenges/weather-observation-station-4/problem) :: [[SQL]](sql/Weather-Observation-Station-4.SQL) {easy}

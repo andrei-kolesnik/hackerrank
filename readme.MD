@@ -89,4 +89,4 @@ Solutions for the practice problems on HackerRank.
 
 ## SQL
 
-### [Weather Observation Station 4](https://www.hackerrank.com/challenges/weather-observation-station-4/problem) :: [[SQL]](sql/Weather-Observation-Station-4.SQL) {easy}
+### [Weather Observation Station 4](https://www.hackerrank.com/challenges/weather-observation-station-4/problem) :: [[SQL]](SQL/Weather-Observation-Station-4.SQL) {easy}

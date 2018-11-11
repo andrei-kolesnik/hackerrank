@@ -92,3 +92,7 @@ Solutions for the practice problems on HackerRank.
 ### [Weather Observation Station 4](https://www.hackerrank.com/challenges/weather-observation-station-4) :: [[SQL]](SQL/Weather-Observation-Station-4.SQL) {easy}
 
 ### [Weather Observation Station 5](https://www.hackerrank.com/challenges/weather-observation-station-5) :: [[SQL]](SQL/Weather-Observation-Station-5.SQL) {easy}
+
+### [Weather Observation Station 8](https://www.hackerrank.com/challenges/weather-observation-station-8) :: [[SQL]](SQL/Weather-Observation-Station-8.SQL) {easy}
+
+### [Weather Observation Station 11](https://www.hackerrank.com/challenges/weather-observation-station-11) :: [[SQL]](SQL/Weather-Observation-Station-11.SQL) {easy}

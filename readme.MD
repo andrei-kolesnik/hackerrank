@@ -89,28 +89,45 @@ Solutions for the practice problems on HackerRank.
 
 ## SQL
 
-### [Weather Observation Station 4](https://www.hackerrank.com/challenges/weather-observation-station-4) :: [[SQL]](SQL/Weather-Observation-Station-4.SQL) {easy}
-* count / distinct count
+### Basic Select
 
-### [Weather Observation Station 5](https://www.hackerrank.com/challenges/weather-observation-station-5) :: [[SQL]](SQL/Weather-Observation-Station-5.SQL) {easy}
+#### [Weather Observation Station 4](https://www.hackerrank.com/challenges/weather-observation-station-4) :: [[SQL]](SQL/Weather-Observation-Station-4.SQL) {easy}
+* `count` / `distinct count`
+
+#### [Weather Observation Station 5](https://www.hackerrank.com/challenges/weather-observation-station-5) :: [[SQL]](SQL/Weather-Observation-Station-5.SQL) {easy}
 * shortest / longest string value in the table
 
-### [Weather Observation Station 8](https://www.hackerrank.com/challenges/weather-observation-station-8) :: [[SQL]](SQL/Weather-Observation-Station-8.SQL) {easy}
+#### [Weather Observation Station 8](https://www.hackerrank.com/challenges/weather-observation-station-8) :: [[SQL]](SQL/Weather-Observation-Station-8.SQL) {easy}
 * starting or ending with a vowel
 
-### [Weather Observation Station 11](https://www.hackerrank.com/challenges/weather-observation-station-11) :: [[SQL]](SQL/Weather-Observation-Station-11.SQL) {easy}
+#### [Weather Observation Station 11](https://www.hackerrank.com/challenges/weather-observation-station-11) :: [[SQL]](SQL/Weather-Observation-Station-11.SQL) {easy}
 * not starting or not ending with a vowel
 
-### [Weather Observation Station 18](https://www.hackerrank.com/challenges/weather-observation-station-18) :: [[SQL]](SQL/Weather-Observation-Station-18.SQL) {medium}
+### Aggregation
+
+#### [Weather Observation Station 18](https://www.hackerrank.com/challenges/weather-observation-station-18) :: [[SQL]](SQL/Weather-Observation-Station-18.SQL) {medium}
 * [Manhattan distance](https://xlinux.nist.gov/dads/HTML/manhattanDistance.html)
 * `cast`, `max`, `min`, `abs`
 
-### [Weather Observation Station 19](https://www.hackerrank.com/challenges/weather-observation-station-19) :: [[SQL]](SQL/Weather-Observation-Station-19.SQL) {medium}
+#### [Weather Observation Station 19](https://www.hackerrank.com/challenges/weather-observation-station-19) :: [[SQL]](SQL/Weather-Observation-Station-19.SQL) {medium}
 * [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance)
 * `cast`, `max`, `min`, `square`, `sqrt`
 
-### [Weather Observation Station 20](https://www.hackerrank.com/challenges/weather-observation-station-20) :: [[SQL]](SQL/Weather-Observation-Station-20.SQL) {medium}
+#### [Weather Observation Station 20](https://www.hackerrank.com/challenges/weather-observation-station-20) :: [[SQL]](SQL/Weather-Observation-Station-20.SQL) {medium}
 * [Median](https://en.wikipedia.org/wiki/Median) value in a table
 
-### [The Blunder](https://www.hackerrank.com/challenges/the-blunder) :: [[SQL]](SQL/The-Blunder.SQL) {easy}
+#### [The Blunder](https://www.hackerrank.com/challenges/the-blunder) :: [[SQL]](SQL/The-Blunder.SQL) {easy}
 * `cast`, `avg`, `replace`, `ceiling`
+
+### Advanced Select
+
+#### [Not A Triangle](https://www.hackerrank.com/challenges/what-type-of-triangle) :: [[SQL]](SQL/Type-of-Triangle.SQL) {easy}
+* `case`
+
+#### [The PADS](https://www.hackerrank.com/challenges/the-pads) :: [[SQL]](SQL/The-PADS.SQL) {medium}
+* `group by`, `count`, `left`, `lower`, `cast`
+
+#### [Occupations](https://www.hackerrank.com/challenges/occupations) :: [[SQL]](SQL/Occupations.SQL) {medium}
+* `rank`, `partition`, `pivot`
+
+#### [Binary Tree Nodes](https://www.hackerrank.com/challenges/binary-search-tree-1) :: [[SQL]](SQL/Binary-Tree-Nodes.SQL) {medium}

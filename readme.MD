@@ -90,9 +90,15 @@ Solutions for the practice problems on HackerRank.
 ## SQL
 
 ### [Weather Observation Station 4](https://www.hackerrank.com/challenges/weather-observation-station-4) :: [[SQL]](SQL/Weather-Observation-Station-4.SQL) {easy}
+* count / distinct count
 
 ### [Weather Observation Station 5](https://www.hackerrank.com/challenges/weather-observation-station-5) :: [[SQL]](SQL/Weather-Observation-Station-5.SQL) {easy}
+* shortest / longest string value in the table
 
 ### [Weather Observation Station 8](https://www.hackerrank.com/challenges/weather-observation-station-8) :: [[SQL]](SQL/Weather-Observation-Station-8.SQL) {easy}
+* starting or ending with a vowel
 
 ### [Weather Observation Station 11](https://www.hackerrank.com/challenges/weather-observation-station-11) :: [[SQL]](SQL/Weather-Observation-Station-11.SQL) {easy}
+* not starting or not ending with a vowel
+
+### [The Blunder](https://www.hackerrank.com/challenges/the-blunder) :: [[SQL]](SQL/The-Blunder.SQL) {easy}

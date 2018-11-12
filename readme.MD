@@ -102,3 +102,8 @@ Solutions for the practice problems on HackerRank.
 * not starting or not ending with a vowel
 
 ### [The Blunder](https://www.hackerrank.com/challenges/the-blunder) :: [[SQL]](SQL/The-Blunder.SQL) {easy}
+* `cast`, `avg`, `replace`, `ceiling`
+
+### [Weather Observation Station 18](https://www.hackerrank.com/challenges/weather-observation-station-18) :: [[SQL]](SQL/Weather-Observation-Station-18.SQL) {medium}
+* [Manhattan distance](https://xlinux.nist.gov/dads/HTML/manhattanDistance.html)
+* `cast`, `max`, `min`, `abs`

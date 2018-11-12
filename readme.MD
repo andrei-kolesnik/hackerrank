@@ -101,9 +101,16 @@ Solutions for the practice problems on HackerRank.
 ### [Weather Observation Station 11](https://www.hackerrank.com/challenges/weather-observation-station-11) :: [[SQL]](SQL/Weather-Observation-Station-11.SQL) {easy}
 * not starting or not ending with a vowel
 
-### [The Blunder](https://www.hackerrank.com/challenges/the-blunder) :: [[SQL]](SQL/The-Blunder.SQL) {easy}
-* `cast`, `avg`, `replace`, `ceiling`
-
 ### [Weather Observation Station 18](https://www.hackerrank.com/challenges/weather-observation-station-18) :: [[SQL]](SQL/Weather-Observation-Station-18.SQL) {medium}
 * [Manhattan distance](https://xlinux.nist.gov/dads/HTML/manhattanDistance.html)
 * `cast`, `max`, `min`, `abs`
+
+### [Weather Observation Station 19](https://www.hackerrank.com/challenges/weather-observation-station-19) :: [[SQL]](SQL/Weather-Observation-Station-19.SQL) {medium}
+* [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance)
+* `cast`, `max`, `min`, `square`, `sqrt`
+
+### [Weather Observation Station 20](https://www.hackerrank.com/challenges/weather-observation-station-20) :: [[SQL]](SQL/Weather-Observation-Station-20.SQL) {medium}
+* [Median](https://en.wikipedia.org/wiki/Median) value in a table
+
+### [The Blunder](https://www.hackerrank.com/challenges/the-blunder) :: [[SQL]](SQL/The-Blunder.SQL) {easy}
+* `cast`, `avg`, `replace`, `ceiling`

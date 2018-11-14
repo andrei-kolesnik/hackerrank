@@ -106,6 +106,10 @@ Solutions for the practice problems on HackerRank.
 #### [Weather Observation Station 11](https://www.hackerrank.com/challenges/weather-observation-station-11) :: [[SQL]](SQL/Weather-Observation-Station-11.SQL) {easy}
 * not starting or not ending with a vowel
 
+### Basic Join
+
+#### [The Report](https://www.hackerrank.com/challenges/the-report) :: [[SQL]](SQL/The-Report.SQL)
+
 ### Aggregation
 
 #### [Weather Observation Station 18](https://www.hackerrank.com/challenges/weather-observation-station-18) :: [[SQL]](SQL/Weather-Observation-Station-18.SQL) {medium}

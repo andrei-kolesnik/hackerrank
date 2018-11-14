@@ -109,6 +109,10 @@ Solutions for the practice problems on HackerRank.
 ### Basic Join
 
 #### [The Report](https://www.hackerrank.com/challenges/the-report) :: [[SQL]](SQL/The-Report.SQL)
+* `inner join`, `case`
+
+#### [Top Competitors](https://www.hackerrank.com/challenges/full-score) :: [[SQL]](SQL/Top-Competitors.SQL)
+* `inner join`, `group by`, `having`, `count`
 
 ### Aggregation
 

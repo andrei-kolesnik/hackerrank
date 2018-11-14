@@ -114,6 +114,9 @@ Solutions for the practice problems on HackerRank.
 #### [Top Competitors](https://www.hackerrank.com/challenges/full-score) :: [[SQL]](SQL/Top-Competitors.SQL)
 * `inner join`, `group by`, `having`, `count`
 
+#### [Ollivander's Inventory](https://www.hackerrank.com/challenges/harry-potter-and-wands) :: [[SQL]](SQL/Ollivanders-Inventory.SQL)
+* `inner join`, `min`
+
 ### Aggregation
 
 #### [Weather Observation Station 18](https://www.hackerrank.com/challenges/weather-observation-station-18) :: [[SQL]](SQL/Weather-Observation-Station-18.SQL) {medium}

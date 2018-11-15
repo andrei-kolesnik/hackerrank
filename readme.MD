@@ -120,6 +120,9 @@ Solutions for the practice problems on HackerRank.
 #### [Challenges](https://www.hackerrank.com/challenges/challenges) :: [[SQL]](SQL/Challenges.SQL)
 * `inner join`, `group by`, `having`, `count`
 
+#### [Contest Leaderboard](https://www.hackerrank.com/challenges/contest-leaderboard) :: [[SQL]](SQL/Contest-Leaderboard.SQL)
+* `inner join`, `group by`, `having`, `count`
+
 ### Aggregation
 
 #### [Weather Observation Station 18](https://www.hackerrank.com/challenges/weather-observation-station-18) :: [[SQL]](SQL/Weather-Observation-Station-18.SQL) {medium}

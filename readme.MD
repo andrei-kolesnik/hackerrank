@@ -117,6 +117,9 @@ Solutions for the practice problems on HackerRank.
 #### [Ollivander's Inventory](https://www.hackerrank.com/challenges/harry-potter-and-wands) :: [[SQL]](SQL/Ollivanders-Inventory.SQL)
 * `inner join`, `min`
 
+#### [Challenges](https://www.hackerrank.com/challenges/challenges) :: [[SQL]](SQL/Challenges.SQL)
+* `inner join`, `group by`, `having`, `count`
+
 ### Aggregation
 
 #### [Weather Observation Station 18](https://www.hackerrank.com/challenges/weather-observation-station-18) :: [[SQL]](SQL/Weather-Observation-Station-18.SQL) {medium}

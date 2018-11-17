@@ -142,7 +142,8 @@ Solutions for the practice problems on HackerRank.
 
 ### Alternative Queries
 #### [Draw The Triangle 1](https://www.hackerrank.com/challenges/draw-the-triangle-1) :: [[SQL]](SQL/Draw-The-Triangle-1.SQL)
-* `while`, `replicate`
+* Version 1: `while`, `replicate`
+* Version 2: Common Table Expressions (CTE's)
 
 ### Advanced Select
 
@@ -165,3 +166,4 @@ Solutions for the practice problems on HackerRank.
 
 #### [15 Days of Learning SQL](https://www.hackerrank.com/challenges/15-days-of-learning-sql) :: [[SQL]](SQL/15-Days-of-Learning-SQL.SQL) {hard}
 * `with`, `row_number over`, `partition by`, `group by`, `count`, `datediff`
+* Common Table Expressions (CTE's)

@@ -139,6 +139,11 @@ Solutions for the practice problems on HackerRank.
 #### [The Blunder](https://www.hackerrank.com/challenges/the-blunder) :: [[SQL]](SQL/The-Blunder.SQL) {easy}
 * `cast`, `avg`, `replace`, `ceiling`
 
+
+### Alternative Queries
+#### [Draw The Triangle 1](https://www.hackerrank.com/challenges/draw-the-triangle-1) :: [[SQL]](SQL/Draw-The-Triangle-1.SQL)
+* `while`, `replicate`
+
 ### Advanced Select
 
 #### [Not A Triangle](https://www.hackerrank.com/challenges/what-type-of-triangle) :: [[SQL]](SQL/Type-of-Triangle.SQL) {easy}
@@ -158,5 +163,5 @@ Solutions for the practice problems on HackerRank.
 
 ### Advanced Join
 
-#### [15 Days of Learning SQL](https://www.hackerrank.com/challenges/15-days-of-learning-sql) :: [[SQL]](SQL/15-Days-of-Learning-SQL.SQL)
+#### [15 Days of Learning SQL](https://www.hackerrank.com/challenges/15-days-of-learning-sql) :: [[SQL]](SQL/15-Days-of-Learning-SQL.SQL) {hard}
 * `with`, `row_number over`, `partition by`, `group by`, `count`, `datediff`

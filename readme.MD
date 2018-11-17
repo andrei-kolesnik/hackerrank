@@ -121,7 +121,7 @@ Solutions for the practice problems on HackerRank.
 * `inner join`, `group by`, `having`, `count`
 
 #### [Contest Leaderboard](https://www.hackerrank.com/challenges/contest-leaderboard) :: [[SQL]](SQL/Contest-Leaderboard.SQL)
-* `inner join`, `group by`, `having`, `count`
+* `inner join`, `group by`, `having`, `sum`, `max`
 
 ### Aggregation
 
@@ -155,3 +155,8 @@ Solutions for the practice problems on HackerRank.
 
 #### [New Companies](https://www.hackerrank.com/challenges/the-company) :: [[SQL]](SQL/New-Companies.SQL) {medium}
 * `join`, `count distinct`, `group by`
+
+### Advanced Join
+
+#### [15 Days of Learning SQL](https://www.hackerrank.com/challenges/15-days-of-learning-sql) :: [[SQL]](SQL/15-Days-of-Learning-SQL.SQL)
+* `with`, `row_number over`, `partition by`, `group by`, `count`, `datediff`

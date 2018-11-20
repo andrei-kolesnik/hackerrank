@@ -168,7 +168,10 @@ Solutions for the practice problems on HackerRank.
 * `with`, `row_number over`, `partition by`, `group by`, `count`, `datediff`
 * Common Table Expressions (CTE's)
 
-### [Projects](https://www.hackerrank.com/challenges/projects) :: [[SQL]](SQL/Projects.SQL) {medium}
+#### [Projects](https://www.hackerrank.com/challenges/projects) :: [[SQL]](SQL/Projects.SQL) {medium}
 * Finding Sequences [Tabibitosan Method](https://community.oracle.com/docs/DOC-915680)
 * `cross join` (Cartesian Product)
 * `with`, `row_number over`, `datediff`
+
+#### [Placements](https://www.hackerrank.com/challenges/placements) :: [[sql]](SQL/Placements.SQL) {medium}
+* `join`

@@ -173,5 +173,9 @@ Solutions for the practice problems on HackerRank.
 * `cross join` (Cartesian Product)
 * `with`, `row_number over`, `datediff`
 
-#### [Placements](https://www.hackerrank.com/challenges/placements) :: [[sql]](SQL/Placements.SQL) {medium}
+#### [Placements](https://www.hackerrank.com/challenges/placements) :: [[SQL]](SQL/Placements.SQL) {medium}
 * `join`
+
+#### [Symmetric Pairs](https://www.hackerrank.com/challenges/symmetric-pairs)  :: [[SQL]](SQL/Symmetric-Pairs.SQL) {medium}
+* `with`, `row_number over`
+* Common Table Expressions (CTE's)

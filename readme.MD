@@ -90,6 +90,10 @@ Solutions for the practice problems on HackerRank.
 * big integers
 * `vector.reverse_iterator`
 
+## Python
+
+### Easy problems :: [[Python]](Python/HackerRank.md)
+
 ## SQL
 
 ### Basic Select
@@ -141,9 +145,13 @@ Solutions for the practice problems on HackerRank.
 
 
 ### Alternative Queries
+
 #### [Draw The Triangle 1](https://www.hackerrank.com/challenges/draw-the-triangle-1) :: [[SQL]](SQL/Draw-The-Triangle-1.SQL)
 * Version 1: `while`, `replicate`
 * Version 2: Recursive Common Table Expressions (CTE's)
+
+#### [Print Prime Numbers](https://www.hackerrank.com/challenges/print-prime-numbers) :: [[SQL]](SQL/Print-Prime-Numbers.SQL)
+* Control of Flow: `while`, `break`, `if`
 
 ### Advanced Select
 

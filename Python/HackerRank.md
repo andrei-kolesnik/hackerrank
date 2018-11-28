@@ -259,3 +259,106 @@ print(get_attr_number(root))
 
     5
     
+
+
+```python
+#XML2 - Find the Maximum Depth
+#https://www.hackerrank.com/challenges/xml2-find-the-maximum-depth
+import xml.etree.ElementTree as etree
+
+def get_depth(node):
+    # your code goes here
+    if len(node) == 0:
+        return 0
+    result = 0
+    for child in node:
+        result = max(result, get_depth(child))
+    return result + 1
+    
+xml1 = '''
+<feed xml:lang='en'>
+    <title>HackerRank</title>
+    <subtitle lang='en'>Programming challenges</subtitle>
+    <link rel='alternate' type='text/html' href='http://hackerrank.com/'/>
+    <updated>2013-12-25T12:00:00</updated>
+</feed>
+'''
+tree = etree.ElementTree(etree.fromstring(xml1))
+root = tree.getroot()
+
+print(get_depth(root)) # 1
+
+xml2 = '''
+<feed xml:lang='en'>
+  <title>HackerRank</title>
+  <subtitle lang='en'>Programming challenges</subtitle>
+  <link rel='alternate' type='text/html' href='http://hackerrank.com/'/>
+  <updated>2013-12-25T12:00:00</updated>
+  <entry>
+  	<author gender='male'>Harsh</author>
+    <question type='hard'>XML 1</question>
+    <description type='text'>This is related to XML parsing</description>
+  </entry>
+</feed>
+'''
+
+tree = etree.ElementTree(etree.fromstring(xml2))
+root = tree.getroot()
+
+print(get_depth(root)) # 2
+```
+
+    1
+    2
+    
+
+
+```python
+#Polynomials
+#https://www.hackerrank.com/challenges/np-polynomials
+import numpy
+
+coefs = list(map(float, input().split())) # 1.1 2 3
+x = float(input()) # 0
+print (numpy.polyval(coefs, x))
+```
+
+    1.1 2 3
+    0
+    3.0
+    
+
+
+```python
+#Linear Algebra
+#https://www.hackerrank.com/challenges/np-linear-algebra
+n = int(input()) # 2
+A = [list(map(float, input().split())) for _ in range(n)] 
+# 1.1 1.1
+# 1.1 1.1
+print(round(numpy.linalg.det(A), 2)) # 0.0
+```
+
+    2
+    1.1 1.1
+    1.1 1.2
+    0.11
+    
+
+
+```python
+#Floor, Ceil and Rint
+#https://www.hackerrank.com/challenges/floor-ceil-and-rint
+numpy.set_printoptions(sign=' ')
+
+A = numpy.array(list(map(float, input().split()))) # 1.1 2.2 3.3 4.4 5.5 6.6 7.7 8.8 9.9
+print(numpy.floor(A)) # [ 1.  2.  3.  4.  5.  6.  7.  8.  9.]
+print(numpy.ceil(A)) # [  2.   3.   4.   5.   6.   7.   8.   9.  10.]
+print(numpy.rint(A)) # [  1.   2.   3.   4.   6.   7.   8.   9.  10.]
+```
+
+    1.1 2.2 3.3 4.4 5.5 6.6 7.7 8.8 9.9
+    [ 1.  2.  3.  4.  5.  6.  7.  8.  9.]
+    [  2.   3.   4.   5.   6.   7.   8.   9.  10.]
+    [  1.   2.   3.   4.   6.   7.   8.   9.  10.]
+    

@@ -1,18 +1,20 @@
 
+### Introduction
+
+[Say "Hello, World!" With Python](https://www.hackerrank.com/challenges/py-hello-world)
+
 
 ```python
-#Say "Hello, World!" With Python
-#https://www.hackerrank.com/challenges/py-hello-world
 print("Hello, World!")
 ```
 
     Hello, World!
     
 
+[Python If-Else](https://www.hackerrank.com/challenges/py-if-else)
+
 
 ```python
-#Python If-Else
-#https://www.hackerrank.com/challenges/py-if-else
 n = 3 #Weird
 #n = 24 #Not Weird
 if n % 2 == 1:
@@ -28,10 +30,10 @@ else:
     Weird
     
 
+[Arithmetic Operators](https://www.hackerrank.com/challenges/python-arithmetic-operators)
+
 
 ```python
-#Arithmetic Operators
-#https://www.hackerrank.com/challenges/python-arithmetic-operators
 a = 3
 b = 2
 print (a+b)
@@ -44,10 +46,10 @@ print (a*b)
     6
     
 
+[Python: Division](https://www.hackerrank.com/challenges/python-division)
+
 
 ```python
-#Python: Division
-#https://www.hackerrank.com/challenges/python-division
 a = 4
 b = 3
 print (a//b)
@@ -58,10 +60,10 @@ print (a/b)
     1.3333333333333333
     
 
+[Loops](https://www.hackerrank.com/challenges/python-loops)
+
 
 ```python
-#Loops
-#https://www.hackerrank.com/challenges/python-loops
 n = 5
 for i in range(n):
     print (i**2)
@@ -74,10 +76,10 @@ for i in range(n):
     16
     
 
+[Write a function](https://www.hackerrank.com/challenges/write-a-function)
+
 
 ```python
-#Write a function
-#https://www.hackerrank.com/challenges/write-a-function
 def is_leap(year):
     leap = False
     # Write your logic here
@@ -96,10 +98,10 @@ print (is_leap(year)) # False
     False
     
 
+[Print Function](https://www.hackerrank.com/challenges/python-print)
+
 
 ```python
-#Print Function
-#https://www.hackerrank.com/challenges/python-print
 n = 30
 for i in range(1, n+1):
     print (i, sep = '', end = '')
@@ -107,10 +109,12 @@ for i in range(1, n+1):
 
     123456789101112131415161718192021222324252627282930
 
+### Basic Data Types
+
+[Find the Runner-Up Score!](https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list)
+
 
 ```python
-#Find the Runner-Up Score!
-#https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list
 arr = [2, 3, 6, 6, 5]
 arr2 = [x for x in arr if x != max(arr)]
 max(arr2)
@@ -123,10 +127,10 @@ max(arr2)
 
 
 
+[Nested Lists](https://www.hackerrank.com/challenges/nested-list/problem)
+
 
 ```python
-#Nested Lists
-#https://www.hackerrank.com/challenges/nested-list/problem
 students = [['Harry', 37.21], ['Berry', 37.21], ['Tina', 37.2], ['Akriti', 41], ['Harsh', 39]]
 second_lowest = sorted(list(set([mark for name, mark in students])))[1]
 for x in sorted([name for name, mark in students if mark == second_lowest]):
@@ -137,10 +141,10 @@ for x in sorted([name for name, mark in students if mark == second_lowest]):
     Harry
     
 
+[Finding the percentage](https://www.hackerrank.com/challenges/finding-the-percentage)
+
 
 ```python
-#Finding the percentage
-#https://www.hackerrank.com/challenges/finding-the-percentage
 student_marks = {
     'Krishna': [67, 68, 69],
     'Arjun': [70, 98, 63],
@@ -155,10 +159,10 @@ print("%.2f" % (sum(query_marks) / len(query_marks)))
     56.00
     
 
+[List Comprehensions](https://www.hackerrank.com/challenges/list-comprehensions)
+
 
 ```python
-#List Comprehensions
-#https://www.hackerrank.com/challenges/list-comprehensions
 x = 1
 y = 1
 z = 1
@@ -170,10 +174,10 @@ print ([[i, j, k] for i in range(x + 1) for j in range (y + 1) for k in range (z
     [[0, 0, 0], [0, 0, 1], [0, 1, 0], [1, 0, 0], [1, 1, 1]]
     
 
+[Lists](https://www.hackerrank.com/challenges/python-lists)
+
 
 ```python
-#Lists
-#https://www.hackerrank.com/challenges/python-lists
 lst = []
 def proc_command(command):
     global lst
@@ -211,7 +215,6 @@ commands = [
 
 for command in commands:
     proc_command(command)
-
 ```
 
     [6, 5, 10]
@@ -219,10 +222,10 @@ for command in commands:
     [9, 5, 1]
     
 
+[Tuples](https://www.hackerrank.com/challenges/python-tuples)
+
 
 ```python
-#Tuples
-#https://www.hackerrank.com/challenges/python-tuples
 integer_list = map(int, '1 2'.split())
 print(hash(tuple(integer_list)))
 ```
@@ -230,10 +233,12 @@ print(hash(tuple(integer_list)))
     1299869600
     
 
+### XML
+
+[XML 1 - Find the Score](https://www.hackerrank.com/challenges/xml-1-find-the-score)
+
 
 ```python
-#XML 1 - Find the Score
-#https://www.hackerrank.com/challenges/xml-1-find-the-score
 import xml.etree.ElementTree as etree
 
 def get_attr_number(node):
@@ -260,10 +265,10 @@ print(get_attr_number(root))
     5
     
 
+[XML2 - Find the Maximum Depth](https://www.hackerrank.com/challenges/xml2-find-the-maximum-depth)
+
 
 ```python
-#XML2 - Find the Maximum Depth
-#https://www.hackerrank.com/challenges/xml2-find-the-maximum-depth
 import xml.etree.ElementTree as etree
 
 def get_depth(node):
@@ -312,10 +317,12 @@ print(get_depth(root)) # 2
     2
     
 
+### Numpy
+
+[Polynomials](https://www.hackerrank.com/challenges/np-polynomials)
+
 
 ```python
-#Polynomials
-#https://www.hackerrank.com/challenges/np-polynomials
 import numpy
 
 coefs = list(map(float, input().split())) # 1.1 2 3
@@ -328,10 +335,10 @@ print (numpy.polyval(coefs, x))
     3.0
     
 
+[Linear Algebra](https://www.hackerrank.com/challenges/np-linear-algebra)
+
 
 ```python
-#Linear Algebra
-#https://www.hackerrank.com/challenges/np-linear-algebra
 n = int(input()) # 2
 A = [list(map(float, input().split())) for _ in range(n)] 
 # 1.1 1.1
@@ -341,14 +348,14 @@ print(round(numpy.linalg.det(A), 2)) # 0.0
 
     2
     1.1 1.1
-    1.1 1.2
-    0.11
+    1.1 1.1
+    0.0
     
+
+[Floor, Ceil and Rint](https://www.hackerrank.com/challenges/floor-ceil-and-rint)
 
 
 ```python
-#Floor, Ceil and Rint
-#https://www.hackerrank.com/challenges/floor-ceil-and-rint
 numpy.set_printoptions(sign=' ')
 
 A = numpy.array(list(map(float, input().split()))) # 1.1 2.2 3.3 4.4 5.5 6.6 7.7 8.8 9.9
@@ -361,4 +368,76 @@ print(numpy.rint(A)) # [  1.   2.   3.   4.   6.   7.   8.   9.  10.]
     [ 1.  2.  3.  4.  5.  6.  7.  8.  9.]
     [  2.   3.   4.   5.   6.   7.   8.   9.  10.]
     [  1.   2.   3.   4.   6.   7.   8.   9.  10.]
+    
+
+[Sum and Prod](https://www.hackerrank.com/challenges/np-sum-and-prod)
+
+
+```python
+n, m = map(int, input().split()) # 2
+A = [list(map(float, input().split())) for _ in range(n)] 
+print(int(numpy.prod(numpy.sum(A, axis = 0))))
+```
+
+    2 2
+    1 2
+    3 4
+    24
+    
+
+### Strings
+
+[sWAP cASE](https://www.hackerrank.com/challenges/swap-case)
+
+
+```python
+s = "Pythonist 2"
+print (s.swapcase())
+```
+
+    pYTHONIST 2
+    
+
+[String Split and Join](https://www.hackerrank.com/challenges/python-string-split-and-join)
+
+
+```python
+s = "this is a string"
+print ('-'.join(s.split()))
+```
+
+    this-is-a-string
+    
+
+[What's Your Name?](https://www.hackerrank.com/challenges/whats-your-name)
+
+
+```python
+first_name = 'Ross'
+last_name = 'Taylor'
+print('Hello ' + first_name + ' ' + last_name + '! You just delved into python.')
+```
+
+    Hello Ross Taylor! You just delved into python.
+    
+
+[Mutations](https://www.hackerrank.com/challenges/python-mutations)
+
+
+```python
+#using list
+string = "abracadabra"
+string_list = [c for c in string]
+string_list[5] = 'k'
+string = ''.join(string_list)
+print(string)
+
+#using split
+string = "abracadabra"
+string = string[:5] + 'k' + string[6:]
+print(string)
+```
+
+    abrackdabra
+    abrackdabra
     

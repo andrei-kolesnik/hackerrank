@@ -117,15 +117,11 @@ for i in range(1, n+1):
 ```python
 arr = [2, 3, 6, 6, 5]
 arr2 = [x for x in arr if x != max(arr)]
-max(arr2)
+print(max(arr2))
 ```
 
-
-
-
     5
-
-
+    
 
 [Nested Lists](https://www.hackerrank.com/challenges/nested-list/problem)
 
@@ -440,4 +436,251 @@ print(string)
 
     abrackdabra
     abrackdabra
+    
+
+[Find a string](https://www.hackerrank.com/challenges/find-a-string)
+
+
+```python
+string = 'ABCDCDC'
+sub_string = 'CDC'
+start = 0
+end = len(string)
+result = 0
+while start < end:
+    start = string.find(sub_string, start, end) + 1
+    if start > 0:
+        result += 1
+    else:
+        break
+
+print(result)
+```
+
+    2
+    
+
+[String Validators](https://www.hackerrank.com/challenges/string-validators)
+
+
+```python
+s = 'qA2'
+
+print(any(c.isalnum() for c in s))
+print(any(c.isalpha() for c in s))
+print(any(c.isdigit() for c in s))
+print(any(c.islower() for c in s))
+print(any(c.isupper() for c in s))
+```
+
+    True
+    True
+    True
+    True
+    True
+    
+
+[Text Alignment](https://www.hackerrank.com/challenges/text-alignment)
+
+
+```python
+thickness = 5 #This must be an odd number
+c = 'H'
+
+#Top Cone
+for i in range(thickness):
+    print((c*i).rjust(thickness-1)+c+(c*i).ljust(thickness-1))
+
+#Top Pillars
+for i in range(thickness+1):
+    print((c*thickness).center(thickness*2)+(c*thickness).center(thickness*6))
+
+#Middle Belt
+for i in range((thickness+1)//2):
+    print((c*thickness*5).center(thickness*6))    
+
+#Bottom Pillars
+for i in range(thickness+1):
+    print((c*thickness).center(thickness*2)+(c*thickness).center(thickness*6))    
+
+#Bottom Cone
+for i in range(thickness):
+    print(((c*(thickness-i-1)).rjust(thickness)+c+(c*(thickness-i-1)).ljust(thickness)).rjust(thickness*6))
+
+```
+
+        H    
+       HHH   
+      HHHHH  
+     HHHHHHH 
+    HHHHHHHHH
+      HHHHH               HHHHH             
+      HHHHH               HHHHH             
+      HHHHH               HHHHH             
+      HHHHH               HHHHH             
+      HHHHH               HHHHH             
+      HHHHH               HHHHH             
+      HHHHHHHHHHHHHHHHHHHHHHHHH   
+      HHHHHHHHHHHHHHHHHHHHHHHHH   
+      HHHHHHHHHHHHHHHHHHHHHHHHH   
+      HHHHH               HHHHH             
+      HHHHH               HHHHH             
+      HHHHH               HHHHH             
+      HHHHH               HHHHH             
+      HHHHH               HHHHH             
+      HHHHH               HHHHH             
+                        HHHHHHHHH 
+                         HHHHHHH  
+                          HHHHH   
+                           HHH    
+                            H     
+    
+
+[Text Wrap](https://www.hackerrank.com/challenges/text-wrap)
+
+
+```python
+import textwrap
+def wrap(string, max_width):
+    return textwrap.fill(string, max_width)
+
+string = 'ABCDEFGHIJKLIMNOQRSTUVWXYZ'
+max_width = 4
+print(wrap(string, max_width))
+```
+
+    ABCD
+    EFGH
+    IJKL
+    IMNO
+    QRST
+    UVWX
+    YZ
+    
+
+[Designer Door Mat](https://www.hackerrank.com/challenges/designer-door-mat)
+
+
+```python
+n = 9
+m = 27
+for i in range(n//2):
+    print(('.|.'*(2*i+1)).center(m, '-'))
+print('WELCOME'.center(m, '-'))
+for i in range(n//2-1, -1, -1):
+    print(('.|.'*(2*i+1)).center(m, '-'))
+
+```
+
+    ------------.|.------------
+    ---------.|..|..|.---------
+    ------.|..|..|..|..|.------
+    ---.|..|..|..|..|..|..|.---
+    ----------WELCOME----------
+    ---.|..|..|..|..|..|..|.---
+    ------.|..|..|..|..|.------
+    ---------.|..|..|.---------
+    ------------.|.------------
+    
+
+[String Formatting](https://www.hackerrank.com/challenges/python-string-formatting)
+
+
+```python
+n = 17
+w = len("{0:b}".format(n))
+for i in range(1, n+1):
+    print("{0:{w}d} {0:{w}o} {0:{w}X} {0:{w}b}".format(i, i, i, i, w=w))
+
+```
+
+        1     1     1     1
+        2     2     2    10
+        3     3     3    11
+        4     4     4   100
+        5     5     5   101
+        6     6     6   110
+        7     7     7   111
+        8    10     8  1000
+        9    11     9  1001
+       10    12     A  1010
+       11    13     B  1011
+       12    14     C  1100
+       13    15     D  1101
+       14    16     E  1110
+       15    17     F  1111
+       16    20    10 10000
+       17    21    11 10001
+    
+
+[Alphabet Rangoli](https://www.hackerrank.com/challenges/alphabet-rangoli)
+
+
+```python
+from string import ascii_lowercase
+size = 5
+width = 2*(size+size-1)-1
+for i in range(size-1, -1, -1):
+    str = ascii_lowercase[i]
+    for j in range(i+1, size):
+        str = ascii_lowercase[j] + '-' + str + '-' + ascii_lowercase[j]
+    print(str.center(width, '-'))
+for i in range(1, size):
+    str = ascii_lowercase[i]
+    for j in range(i+1, size):
+        str = ascii_lowercase[j] + '-' + str + '-' + ascii_lowercase[j]
+    print(str.center(width, '-'))
+
+```
+
+    --------e--------
+    ------e-d-e------
+    ----e-d-c-d-e----
+    --e-d-c-b-c-d-e--
+    e-d-c-b-a-b-c-d-e
+    --e-d-c-b-c-d-e--
+    ----e-d-c-d-e----
+    ------e-d-e------
+    --------e--------
+    
+
+
+[Capitalize!](https://www.hackerrank.com/challenges/capitalize)
+
+
+```python
+s = "1 w 2 r 3g chris r alan they're bill's friends"
+
+ret = ''
+for i in range(len(s)):
+    if s[i].islower() and (i == 0 or s[i-1] == ' '):
+        ret = ret + s[i].upper()
+    else:
+        ret = ret + s[i] 
+
+print (ret)
+```
+
+    1 W 2 R 3g Chris R Alan They're Bill's Friends
+    
+
+### Itertools
+
+[itertools.product()](https://www.hackerrank.com/challenges/itertools-product)
+
+
+```python
+from itertools import product
+A = [1, 2]
+B = [3, 4]
+#A = list(map(int, input().split())) 
+#B = list(map(int, input().split())) 
+
+print(*product(A, B))
+
+#for t in list(product(A, B)):
+#    print(t, sep=' ', end=' ')
+```
+
+    (1, 3) (1, 4) (2, 3) (2, 4)
     

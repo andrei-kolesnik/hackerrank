@@ -94,6 +94,12 @@ Solutions for the practice problems on HackerRank.
 
 ### Easy problems :: [[Python]](Python/HackerRank.md)
 
+### Strings
+
+#### [The Minion Game](https://www.hackerrank.com/challenges/the-minion-game) :: [[C++ STL]](Python/Strings.The-Minion-Game.py) {medium}
+* substrings
+* Counter class
+
 ## SQL
 
 ### Basic Select

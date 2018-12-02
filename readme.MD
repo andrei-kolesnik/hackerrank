@@ -96,7 +96,7 @@ Solutions for the practice problems on HackerRank.
 
 ### Strings
 
-#### [The Minion Game](https://www.hackerrank.com/challenges/the-minion-game) :: [[C++ STL]](Python/Strings.The-Minion-Game.py) {medium}
+#### [The Minion Game](https://www.hackerrank.com/challenges/the-minion-game) :: [[Python]](Python/Strings.The-Minion-Game.py) {medium}
 * substrings
 * Counter class
 

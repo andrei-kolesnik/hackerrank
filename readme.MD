@@ -98,7 +98,10 @@ Solutions for the practice problems on HackerRank.
 
 #### [The Minion Game](https://www.hackerrank.com/challenges/the-minion-game) :: [[Python]](Python/Strings.The-Minion-Game.py) {medium}
 * substrings
-* Counter class
+* Counter class (in Version 1)
+
+#### [Merge the Tools!](https://www.hackerrank.com/challenges/merge-the-tools) :: [[Python]](Python/Strings.Merge-the-Tools.py) {medium}
+* substrings
 
 ## SQL
 

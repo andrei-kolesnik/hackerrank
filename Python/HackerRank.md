@@ -664,6 +664,36 @@ print (ret)
     1 W 2 R 3g Chris R Alan They're Bill's Friends
     
 
+### Collections
+
+[collections.Counter()](https://www.hackerrank.com/challenges/collections-counter)
+
+
+```python
+from collections import Counter
+X = 10 # int(input())
+Sizes = [2, 3, 4, 5, 6, 8, 7, 6, 5, 18] # list(map(int, input.split()))
+Store = Counter(Sizes)
+total = 0
+N = 6 # int(input())
+for i in range(N):
+    size, price = map(int, input().split())
+    if Store[size] > 0:
+        total += price
+        Store[size] -= 1
+    
+print(total)
+```
+
+    6 55
+    6 45
+    6 55
+    4 40
+    18 60
+    10 50
+    200
+    
+
 ### Itertools
 
 [itertools.product()](https://www.hackerrank.com/challenges/itertools-product)
@@ -671,16 +701,365 @@ print (ret)
 
 ```python
 from itertools import product
-A = [1, 2]
-B = [3, 4]
-#A = list(map(int, input().split())) 
-#B = list(map(int, input().split())) 
-
-print(*product(A, B))
-
-#for t in list(product(A, B)):
-#    print(t, sep=' ', end=' ')
+A = [1, 2] #A = list(map(int, input().split())) 
+B = [3, 4] #B = list(map(int, input().split())) 
+print(*product(A, B)) # use * for unpacking the containers
 ```
 
     (1, 3) (1, 4) (2, 3) (2, 4)
+    
+
+[itertools.permutations()](https://www.hackerrank.com/challenges/itertools-permutations)
+
+
+```python
+from itertools import permutations
+S = 'HACK'
+k = 2
+#S, k = input().split()
+#k = int(k)
+S = sorted(S)
+for s in [''.join(perm) for perm in permutations(S, k)]:
+    print(s) 
+```
+
+    AC
+    AH
+    AK
+    CA
+    CH
+    CK
+    HA
+    HC
+    HK
+    KA
+    KC
+    KH
+    
+
+[itertools.combinations()](https://www.hackerrank.com/challenges/itertools-combinations)
+
+
+```python
+from itertools import combinations
+S = 'HACK'
+k = 2
+#S, k = input().split()
+#k = int(k)
+S = sorted(S)
+for i in range(1, k+1):
+    for s in [''.join(perm) for perm in combinations(S, i)]:
+        print(s) 
+```
+
+    A
+    C
+    H
+    K
+    AC
+    AH
+    AK
+    CH
+    CK
+    HK
+    
+
+[itertools.combinations_with_replacement()](https://www.hackerrank.com/challenges/itertools-combinations-with-replacement)
+
+
+```python
+from itertools import combinations_with_replacement
+S = 'HACK'
+k = 2
+#S, k = input().split()
+#k = int(k)
+S = sorted(S)
+for s in [''.join(perm) for perm in combinations_with_replacement(S, k)]:
+    print(s) 
+```
+
+    AA
+    AC
+    AH
+    AK
+    CC
+    CH
+    CK
+    HH
+    HK
+    KK
+    
+
+[Compress the String!](https://www.hackerrank.com/challenges/compress-the-string)
+
+
+```python
+from itertools import groupby
+S = '1222311' # input()
+print(*[ (len(list(g)), int(k)) for k, g in groupby(S)])
+```
+
+    (1, 1) (3, 2) (1, 3) (2, 1)
+    
+
+### Math
+
+[Polar Coordinates](https://www.hackerrank.com/challenges/polar-coordinates)
+
+
+```python
+import cmath
+c = complex("1+2j")
+print(abs(c))
+print(cmath.phase(c))
+```
+
+    2.23606797749979
+    1.1071487177940904
+    
+
+### Sets
+
+[Introduction to Sets](https://www.hackerrank.com/challenges/py-introduction-to-sets)
+
+
+```python
+def average(array):
+    if len(array) == 0:
+        return 0
+    array_as_set = set(array)
+    return sum(array_as_set) / len(array_as_set)
+    
+arr = [161, 182, 161, 154, 176, 170, 167, 171, 170, 174]
+result = average(arr)
+print(result)    
+```
+
+    169.375
+    
+
+[Set .add()](https://www.hackerrank.com/challenges/py-set-add)
+
+
+```python
+N = int(input())
+stamps = set()
+for i in range(N):
+    stamps.add(input())
+print(len(stamps))
+```
+
+    7
+    UK
+    China
+    USA
+    France
+    New Zealand
+    UK
+    France
+    5
+    
+
+[Set .discard(), .remove() & .pop()](https://www.hackerrank.com/challenges/py-set-discard-remove-pop/)
+
+
+```python
+n = int(input())
+s = set(map(int, input().split()))
+for _ in range(int(input())):
+    command = input().split()
+    if command[0] == 'remove':
+        s.remove(int(command[1]))
+    elif command[0] == 'discard':
+        s.discard(int(command[1]))
+    elif command[0] == 'pop':
+        s.pop()
+
+print(sum(s))
+```
+
+    9
+    1 2 3 4 5 6 7 8 9
+    10
+    pop
+    remove 9
+    discard 9
+    discard 8
+    remove 7
+    pop
+    discard 6
+    remove 5
+    pop
+    discard 5
+    4
+    
+
+[Set .union() Operation](https://www.hackerrank.com/challenges/py-set-union)
+[Set .intersection() Operation](https://www.hackerrank.com/challenges/py-set-intersection-operation)
+[Set .difference() Operation](https://www.hackerrank.com/challenges/py-set-difference-operation)
+[Set .symmetric_difference() Operation](https://www.hackerrank.com/challenges/py-set-symmetric-difference-operation)
+
+
+```python
+n = int(input())
+english = set(map(int, input().split()))
+m = int(input())
+french = set(map(int, input().split()))
+print('union:', len(english.union(french)))
+print('intersection:', len(english.intersection(french)))
+print('difference', len(english.difference(french)))
+print('symmetric_difference', len(english.symmetric_difference(french)))
+```
+
+    9
+    1 2 3 4 5 6 7 8 9
+    9
+    10 1 2 3 11 21 55 6 8
+    union: 13
+    intersection: 5
+    difference 4
+    symmetric_difference 8
+    
+
+[Symmetric Difference](https://www.hackerrank.com/challenges/symmetric-difference)
+
+
+```python
+i = 4 # input()
+N = {2, 4, 5, 9} # set(map(int, input().split()))
+j = 4 # input()
+M = {2, 4, 11, 12} # set(map(int, input().split()))
+R = M.union(N)
+for r in M.intersection(N):
+    R.remove(r)
+print(*sorted(list(R)), sep = '\n')
+
+```
+
+    5
+    9
+    11
+    12
+    
+
+[Set Mutations](https://www.hackerrank.com/challenges/py-set-mutations)
+
+
+```python
+n = int(input())
+A = set(map(int, input().split()))
+for _ in range(int(input())):
+    command = input().split()
+    B = set(map(int, input().split()))
+    if command[0] == 'update':
+        A.update(B)
+    elif command[0] == 'intersection_update':
+        A.intersection_update(B)
+    elif command[0] == 'difference_update':
+        A.difference_update(B)
+    elif command[0] == 'symmetric_difference_update':
+        A.symmetric_difference_update(B)
+print(sum(A))
+```
+
+    16
+    1 2 3 4 5 6 7 8 9 10 11 12 13 14 24 52
+    4
+    intersection_update 10
+    2 3 5 6 8 9 1 4 7 11
+    update 2
+    55 66
+    symmetric_difference_update 5
+    22 7 35 62 58
+    difference_update 7
+    11 22 35 55 58 62 66
+    38
+    
+
+[The Captain's Room](https://www.hackerrank.com/challenges/py-the-captains-room)
+
+
+```python
+k = int(input())
+A = list(map(int, input().split()))
+
+# Version 1: using counter
+from collections import Counter
+rooms = Counter(A)
+[print(n) for n in rooms if rooms[n] == 1] 
+
+# Version 2: using sets 
+s1=set()  #all unique room number
+s2=set()  #all unique room number occur more than once
+for i in A:
+    if i in s1:
+        s2.add(i)
+    else:
+        s1.add(i)
+print(list(s1.difference(s2))[0])
+
+# Version 3: using sets
+R = set(A)
+#remove set of rooms from original group
+for r in R:
+    A.remove(r)
+#the new set should not contain the captain room
+non_captain = set(A)
+#print the poped only remaining element from difference
+print(R.difference(non_captain).pop())
+```
+
+    5
+    1 2 3 6 5 4 4 2 5 3 6 1 6 5 3 2 4 1 2 5 1 4 3 6 8 4 3 1 5 6 2 
+    8
+    8
+    8
+    
+
+[Check Subset](https://www.hackerrank.com/challenges/py-check-subset)
+
+
+```python
+for _ in range(int(input())):
+    na, A = int(input()), set(map(int, input().split()))
+    nb, B = int(input()), set(map(int, input().split()))
+    print(len(A.difference(B)) == 0)
+```
+
+    3
+    5
+    1 2 3 5 6
+    9
+    9 8 5 6 3 2 1 4 7
+    True
+    1
+    2
+    5
+    3 6 5 4 1
+    False
+    7
+    1 2 3 5 6 8 9
+    3
+    9 8 2
+    False
+    
+
+[Check Strict Superset](https://www.hackerrank.com/challenges/py-check-strict-superset)
+
+
+```python
+A = set(map(int, input().split()))
+answer = True
+for _ in range(int(input())):
+    N = set(map(int, input().split()))
+    if len(N.difference(A)) != 0 or len(A.difference(N)) == 0:
+        answer = False
+print(answer)
+```
+
+    1 2 3 4 5 6 7 8 9 10 11 12 23 45 84 78
+    2
+    1 2 3 4 5
+    100 11 12
+    False
     

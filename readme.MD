@@ -92,7 +92,9 @@ Solutions for the practice problems on HackerRank.
 
 ## Python
 
-### Easy problems :: [[Python]](Python/HackerRank.md)
+### Easy problems (in one Jupyter Notebook) :: [[Python]](Python/HackerRank.md)
+
+### Medium and Hard problems (in individual files) :: [[Python]](Python)
 
 ### Strings
 
@@ -102,6 +104,10 @@ Solutions for the practice problems on HackerRank.
 
 #### [Merge the Tools!](https://www.hackerrank.com/challenges/merge-the-tools) :: [[Python]](Python/Strings.Merge-the-Tools.py) {medium}
 * substrings
+
+### Itertools
+
+#### [Compress the String!](https://www.hackerrank.com/challenges/compress-the-string) :: [[Python]](Python/Itertools.Compress-the-String.py) {medium}
 
 ## SQL
 

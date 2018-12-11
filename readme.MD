@@ -111,6 +111,13 @@ Solutions for the practice problems on HackerRank.
 ### Itertools
 
 #### [Compress the String!](https://www.hackerrank.com/challenges/compress-the-string) :: [[Python]](Python/Itertools.Compress-the-String.py) {medium}
+* `itertools.groupby`
+* list comprehension
+
+### Algorithms / Data Structures / Containers
+
+#### [QHEAP1](https://www.hackerrank.com/challenges/qheap1) :: [[C++ STL]](Python/Container.QHEAP1.py) {easy}
+* `heapq`
 
 ## SQL
 

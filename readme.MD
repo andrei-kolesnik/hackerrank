@@ -86,6 +86,9 @@ Solutions for the practice problems on HackerRank.
 #### [Array Manipulation](https://www.hackerrank.com/challenges/crush) :: [[C++ STL]](Algorithm.Array-Manipulation.STL) {hard}
 * [Difference Array | Range update query in O(1)](https://www.geeksforgeeks.org/difference-array-range-update-query-o1/)
 
+#### [QHEAP1](https://www.hackerrank.com/challenges/qheap1) :: [[C++ STL]](Container.QHEAP1.STL) {easy}
+* `heap<int>`
+
 #### [Extra Long Factorials](https://www.hackerrank.com/challenges/extra-long-factorials) :: [[C++ STL]](Algorithm.Extra-Long-Factorials.STL) {medium}
 * big integers
 * `vector.reverse_iterator`

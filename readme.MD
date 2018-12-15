@@ -116,8 +116,14 @@ Solutions for the practice problems on HackerRank.
 
 ### Algorithms / Data Structures / Containers
 
-#### [QHEAP1](https://www.hackerrank.com/challenges/qheap1) :: [[C++ STL]](Python/Container.QHEAP1.py) {easy}
+#### [No Idea!](https://www.hackerrank.com/challenges/no-idea) :: [[Python]](Python/Container.No-Idea.py) {medium}
+* sets
+
+#### [QHEAP1](https://www.hackerrank.com/challenges/qheap1) :: [[Python]](Python/Container.QHEAP1.py) {easy}
 * `heapq`
+
+#### [DefaultDict Tutorial](https://www.hackerrank.com/challenges/defaultdict-tutorial) :: [[Python]](Python/Container.DefaultDict-Tutorial.py) {easy}
+* `collections.defaultdict`
 
 ## SQL
 

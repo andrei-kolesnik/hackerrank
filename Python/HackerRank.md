@@ -109,278 +109,6 @@ for i in range(1, n+1):
 
     123456789101112131415161718192021222324252627282930
 
-### Basic Data Types
-
-[Find the Runner-Up Score!](https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list)
-
-
-```python
-arr = [2, 3, 6, 6, 5]
-arr2 = [x for x in arr if x != max(arr)]
-print(max(arr2))
-```
-
-    5
-    
-
-[Nested Lists](https://www.hackerrank.com/challenges/nested-list/problem)
-
-
-```python
-students = [['Harry', 37.21], ['Berry', 37.21], ['Tina', 37.2], ['Akriti', 41], ['Harsh', 39]]
-second_lowest = sorted(list(set([mark for name, mark in students])))[1]
-for x in sorted([name for name, mark in students if mark == second_lowest]):
-    print(x)
-```
-
-    Berry
-    Harry
-    
-
-[Finding the percentage](https://www.hackerrank.com/challenges/finding-the-percentage)
-
-
-```python
-student_marks = {
-    'Krishna': [67, 68, 69],
-    'Arjun': [70, 98, 63],
-    'Malika': [52, 56, 60]
-}
-query_name = 'Malika'
-
-query_marks = student_marks[query_name]
-print("%.2f" % (sum(query_marks) / len(query_marks)))
-```
-
-    56.00
-    
-
-[List Comprehensions](https://www.hackerrank.com/challenges/list-comprehensions)
-
-
-```python
-x = 1
-y = 1
-z = 1
-n = 2
-
-print ([[i, j, k] for i in range(x + 1) for j in range (y + 1) for k in range (z + 1) if i+j+k != n])
-```
-
-    [[0, 0, 0], [0, 0, 1], [0, 1, 0], [1, 0, 0], [1, 1, 1]]
-    
-
-[Lists](https://www.hackerrank.com/challenges/python-lists)
-
-
-```python
-lst = []
-def proc_command(command):
-    global lst
-    actions = command.split()
-    if actions[0] == 'insert':
-        lst.insert(int(actions[1]), int(actions[2]))
-    elif actions[0] == 'print':
-        print(lst)
-    elif actions[0] == 'remove':
-        lst.remove(int(actions[1]))
-    elif actions[0] == 'append':
-        lst.append(int(actions[1]))
-    elif actions[0] == 'sort':
-        lst.sort()
-    elif actions[0] == 'pop':
-        lst.pop()
-    elif actions[0] == 'reverse':
-        lst.reverse()
-    return
-
-commands = [
-  'insert 0 5',
-  'insert 1 10',
-  'insert 0 6',
-  'print',
-  'remove 6',
-  'append 9',
-  'append 1',
-  'sort',
-  'print',
-  'pop',
-  'reverse',
-  'print'    
-]
-
-for command in commands:
-    proc_command(command)
-```
-
-    [6, 5, 10]
-    [1, 5, 9, 10]
-    [9, 5, 1]
-    
-
-[Tuples](https://www.hackerrank.com/challenges/python-tuples)
-
-
-```python
-integer_list = map(int, '1 2'.split())
-print(hash(tuple(integer_list)))
-```
-
-    1299869600
-    
-
-### XML
-
-[XML 1 - Find the Score](https://www.hackerrank.com/challenges/xml-1-find-the-score)
-
-
-```python
-import xml.etree.ElementTree as etree
-
-def get_attr_number(node):
-    # your code goes here
-    result = len(node.attrib)
-    for child in node:
-        result += get_attr_number(child)
-    return result
-    
-xml = '''
-<feed xml:lang='en'>
-    <title>HackerRank</title>
-    <subtitle lang='en'>Programming challenges</subtitle>
-    <link rel='alternate' type='text/html' href='http://hackerrank.com/'/>
-    <updated>2013-12-25T12:00:00</updated>
-</feed>
-'''
-tree = etree.ElementTree(etree.fromstring(xml))
-root = tree.getroot()
-
-print(get_attr_number(root))
-```
-
-    5
-    
-
-[XML2 - Find the Maximum Depth](https://www.hackerrank.com/challenges/xml2-find-the-maximum-depth)
-
-
-```python
-import xml.etree.ElementTree as etree
-
-def get_depth(node):
-    # your code goes here
-    if len(node) == 0:
-        return 0
-    result = 0
-    for child in node:
-        result = max(result, get_depth(child))
-    return result + 1
-    
-xml1 = '''
-<feed xml:lang='en'>
-    <title>HackerRank</title>
-    <subtitle lang='en'>Programming challenges</subtitle>
-    <link rel='alternate' type='text/html' href='http://hackerrank.com/'/>
-    <updated>2013-12-25T12:00:00</updated>
-</feed>
-'''
-tree = etree.ElementTree(etree.fromstring(xml1))
-root = tree.getroot()
-
-print(get_depth(root)) # 1
-
-xml2 = '''
-<feed xml:lang='en'>
-  <title>HackerRank</title>
-  <subtitle lang='en'>Programming challenges</subtitle>
-  <link rel='alternate' type='text/html' href='http://hackerrank.com/'/>
-  <updated>2013-12-25T12:00:00</updated>
-  <entry>
-  	<author gender='male'>Harsh</author>
-    <question type='hard'>XML 1</question>
-    <description type='text'>This is related to XML parsing</description>
-  </entry>
-</feed>
-'''
-
-tree = etree.ElementTree(etree.fromstring(xml2))
-root = tree.getroot()
-
-print(get_depth(root)) # 2
-```
-
-    1
-    2
-    
-
-### Numpy
-
-[Polynomials](https://www.hackerrank.com/challenges/np-polynomials)
-
-
-```python
-import numpy
-
-coefs = list(map(float, input().split())) # 1.1 2 3
-x = float(input()) # 0
-print (numpy.polyval(coefs, x))
-```
-
-    1.1 2 3
-    0
-    3.0
-    
-
-[Linear Algebra](https://www.hackerrank.com/challenges/np-linear-algebra)
-
-
-```python
-n = int(input()) # 2
-A = [list(map(float, input().split())) for _ in range(n)] 
-# 1.1 1.1
-# 1.1 1.1
-print(round(numpy.linalg.det(A), 2)) # 0.0
-```
-
-    2
-    1.1 1.1
-    1.1 1.1
-    0.0
-    
-
-[Floor, Ceil and Rint](https://www.hackerrank.com/challenges/floor-ceil-and-rint)
-
-
-```python
-numpy.set_printoptions(sign=' ')
-
-A = numpy.array(list(map(float, input().split()))) # 1.1 2.2 3.3 4.4 5.5 6.6 7.7 8.8 9.9
-print(numpy.floor(A)) # [ 1.  2.  3.  4.  5.  6.  7.  8.  9.]
-print(numpy.ceil(A)) # [  2.   3.   4.   5.   6.   7.   8.   9.  10.]
-print(numpy.rint(A)) # [  1.   2.   3.   4.   6.   7.   8.   9.  10.]
-```
-
-    1.1 2.2 3.3 4.4 5.5 6.6 7.7 8.8 9.9
-    [ 1.  2.  3.  4.  5.  6.  7.  8.  9.]
-    [  2.   3.   4.   5.   6.   7.   8.   9.  10.]
-    [  1.   2.   3.   4.   6.   7.   8.   9.  10.]
-    
-
-[Sum and Prod](https://www.hackerrank.com/challenges/np-sum-and-prod)
-
-
-```python
-n, m = map(int, input().split()) # 2
-A = [list(map(float, input().split())) for _ in range(n)] 
-print(int(numpy.prod(numpy.sum(A, axis = 0))))
-```
-
-    2 2
-    1 2
-    3 4
-    24
-    
-
 ### Strings
 
 [sWAP cASE](https://www.hackerrank.com/challenges/swap-case)
@@ -664,158 +392,126 @@ print (ret)
     1 W 2 R 3g Chris R Alan They're Bill's Friends
     
 
-### Collections
+### Basic Data Types
 
-[collections.Counter()](https://www.hackerrank.com/challenges/collections-counter)
+### Lists
 
-
-```python
-from collections import Counter
-X = 10 # int(input())
-Sizes = [2, 3, 4, 5, 6, 8, 7, 6, 5, 18] # list(map(int, input.split()))
-Store = Counter(Sizes)
-total = 0
-N = 6 # int(input())
-for i in range(N):
-    size, price = map(int, input().split())
-    if Store[size] > 0:
-        total += price
-        Store[size] -= 1
-    
-print(total)
-```
-
-    6 55
-    6 45
-    6 55
-    4 40
-    18 60
-    10 50
-    200
-    
-
-### Itertools
-
-[itertools.product()](https://www.hackerrank.com/challenges/itertools-product)
+[Find the Runner-Up Score!](https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list)
 
 
 ```python
-from itertools import product
-A = [1, 2] #A = list(map(int, input().split())) 
-B = [3, 4] #B = list(map(int, input().split())) 
-print(*product(A, B)) # use * for unpacking the containers
+arr = [2, 3, 6, 6, 5]
+arr2 = [x for x in arr if x != max(arr)]
+print(max(arr2))
 ```
 
-    (1, 3) (1, 4) (2, 3) (2, 4)
+    5
     
 
-[itertools.permutations()](https://www.hackerrank.com/challenges/itertools-permutations)
+[Nested Lists](https://www.hackerrank.com/challenges/nested-list/problem)
 
 
 ```python
-from itertools import permutations
-S = 'HACK'
-k = 2
-#S, k = input().split()
-#k = int(k)
-S = sorted(S)
-for s in [''.join(perm) for perm in permutations(S, k)]:
-    print(s) 
+students = [['Harry', 37.21], ['Berry', 37.21], ['Tina', 37.2], ['Akriti', 41], ['Harsh', 39]]
+second_lowest = sorted(list(set([mark for name, mark in students])))[1]
+for x in sorted([name for name, mark in students if mark == second_lowest]):
+    print(x)
 ```
 
-    AC
-    AH
-    AK
-    CA
-    CH
-    CK
-    HA
-    HC
-    HK
-    KA
-    KC
-    KH
+    Berry
+    Harry
     
 
-[itertools.combinations()](https://www.hackerrank.com/challenges/itertools-combinations)
+[Finding the percentage](https://www.hackerrank.com/challenges/finding-the-percentage)
 
 
 ```python
-from itertools import combinations
-S = 'HACK'
-k = 2
-#S, k = input().split()
-#k = int(k)
-S = sorted(S)
-for i in range(1, k+1):
-    for s in [''.join(perm) for perm in combinations(S, i)]:
-        print(s) 
+student_marks = {
+    'Krishna': [67, 68, 69],
+    'Arjun': [70, 98, 63],
+    'Malika': [52, 56, 60]
+}
+query_name = 'Malika'
+
+query_marks = student_marks[query_name]
+print("%.2f" % (sum(query_marks) / len(query_marks)))
 ```
 
-    A
-    C
-    H
-    K
-    AC
-    AH
-    AK
-    CH
-    CK
-    HK
+    56.00
     
 
-[itertools.combinations_with_replacement()](https://www.hackerrank.com/challenges/itertools-combinations-with-replacement)
+[Lists](https://www.hackerrank.com/challenges/python-lists)
 
 
 ```python
-from itertools import combinations_with_replacement
-S = 'HACK'
-k = 2
-#S, k = input().split()
-#k = int(k)
-S = sorted(S)
-for s in [''.join(perm) for perm in combinations_with_replacement(S, k)]:
-    print(s) 
+lst = []
+def proc_command(command):
+    global lst
+    actions = command.split()
+    if actions[0] == 'insert':
+        lst.insert(int(actions[1]), int(actions[2]))
+    elif actions[0] == 'print':
+        print(lst)
+    elif actions[0] == 'remove':
+        lst.remove(int(actions[1]))
+    elif actions[0] == 'append':
+        lst.append(int(actions[1]))
+    elif actions[0] == 'sort':
+        lst.sort()
+    elif actions[0] == 'pop':
+        lst.pop()
+    elif actions[0] == 'reverse':
+        lst.reverse()
+    return
+
+commands = [
+  'insert 0 5',
+  'insert 1 10',
+  'insert 0 6',
+  'print',
+  'remove 6',
+  'append 9',
+  'append 1',
+  'sort',
+  'print',
+  'pop',
+  'reverse',
+  'print'    
+]
+
+for command in commands:
+    proc_command(command)
 ```
 
-    AA
-    AC
-    AH
-    AK
-    CC
-    CH
-    CK
-    HH
-    HK
-    KK
+    [6, 5, 10]
+    [1, 5, 9, 10]
+    [9, 5, 1]
     
 
-[Compress the String!](https://www.hackerrank.com/challenges/compress-the-string)
+[List Comprehensions](https://www.hackerrank.com/challenges/list-comprehensions)
 
 
 ```python
-from itertools import groupby
-S = '1222311' # input()
-print(*[ (len(list(g)), int(k)) for k, g in groupby(S)])
+x = 1
+y = 1
+z = 1
+n = 2
+
+print ([[i, j, k] for i in range(x + 1) for j in range (y + 1) for k in range (z + 1) if i+j+k != n])
 ```
 
-    (1, 1) (3, 2) (1, 3) (2, 1)
+    [[0, 0, 0], [0, 0, 1], [0, 1, 0], [1, 0, 0], [1, 1, 1]]
     
 
-### Math
-
-[Polar Coordinates](https://www.hackerrank.com/challenges/polar-coordinates)
+[Tuples](https://www.hackerrank.com/challenges/python-tuples)
 
 
 ```python
-import cmath
-c = complex("1+2j")
-print(abs(c))
-print(cmath.phase(c))
+integer_list = map(int, '1 2'.split())
+print(hash(tuple(integer_list)))
 ```
 
-    2.23606797749979
-    1.1071487177940904
+    1299869600
     
 
 ### Sets
@@ -1062,4 +758,402 @@ print(answer)
     1 2 3 4 5
     100 11 12
     False
+    
+
+### Collections
+
+[collections.Counter()](https://www.hackerrank.com/challenges/collections-counter)
+
+
+```python
+from collections import Counter
+X = 10 # int(input())
+Sizes = [2, 3, 4, 5, 6, 8, 7, 6, 5, 18] # list(map(int, input.split()))
+Store = Counter(Sizes)
+total = 0
+N = 6 # int(input())
+for i in range(N):
+    size, price = map(int, input().split())
+    if Store[size] > 0:
+        total += price
+        Store[size] -= 1
+    
+print(total)
+```
+
+    6 55
+    6 45
+    6 55
+    4 40
+    18 60
+    10 50
+    200
+    
+
+[DefaultDict Tutorial](https://www.hackerrank.com/challenges/defaultdict-tutorial)
+
+
+```python
+from collections import defaultdict
+n, m = map(int, input().split())
+A = []
+for _ in range(n):
+    A.append(input())
+d = defaultdict(list)
+for _ in range(m):
+    m_str = input()
+    for i in range(n):
+        if A[i] == m_str:
+            if i+1 not in d[m_str]:            
+                d[m_str].append(i+1)
+    if len(d[m_str]) == 0:
+        print(-1)
+    else:
+        print(*d[m_str])
+```
+
+    5 2
+    a
+    a
+    b
+    a
+    b
+    a
+    1 2 4
+    b
+    3 5
+    
+
+[Collections.namedtuple()](https://www.hackerrank.com/challenges/py-collections-namedtuple)
+
+
+```python
+from collections import namedtuple
+N = int(input())
+Student = namedtuple('Student', input())
+total = 0
+for _ in range(N):
+    stu = Student(*input().split())
+    total += int(stu.MARKS)
+print("%.2f" % (total/N))
+```
+
+    5
+    ID         MARKS      NAME       CLASS
+    1          97         Raymond    7
+    2          50         Steven     4
+    3          91         Adrian     9
+    4          72         Stewart    5
+    5          80         Peter      6
+    78.00
+    
+
+[Collections.OrderedDict()](https://www.hackerrank.com/challenges/py-collections-ordereddict)
+
+
+```python
+from collections import OrderedDict
+od = OrderedDict()
+for _ in range(int(input())):
+    item = input().split()
+    name = ' '.join(item[:-1])
+    price = int(item[-1])
+    if name in od:
+        od[name] += price
+    else:
+        od[name] = price
+for i in od:
+    print(i, od[i])
+```
+
+    9
+    BANANA FRIES 12
+    POTATO CHIPS 30
+    APPLE JUICE 10
+    CANDY 5
+    APPLE JUICE 10
+    CANDY 5
+    CANDY 5
+    CANDY 5
+    POTATO CHIPS 30
+    BANANA FRIES 12
+    POTATO CHIPS 60
+    APPLE JUICE 20
+    CANDY 20
+    
+
+### XML
+
+[XML 1 - Find the Score](https://www.hackerrank.com/challenges/xml-1-find-the-score)
+
+
+```python
+import xml.etree.ElementTree as etree
+
+def get_attr_number(node):
+    # your code goes here
+    result = len(node.attrib)
+    for child in node:
+        result += get_attr_number(child)
+    return result
+    
+xml = '''
+<feed xml:lang='en'>
+    <title>HackerRank</title>
+    <subtitle lang='en'>Programming challenges</subtitle>
+    <link rel='alternate' type='text/html' href='http://hackerrank.com/'/>
+    <updated>2013-12-25T12:00:00</updated>
+</feed>
+'''
+tree = etree.ElementTree(etree.fromstring(xml))
+root = tree.getroot()
+
+print(get_attr_number(root))
+```
+
+    5
+    
+
+[XML2 - Find the Maximum Depth](https://www.hackerrank.com/challenges/xml2-find-the-maximum-depth)
+
+
+```python
+import xml.etree.ElementTree as etree
+
+def get_depth(node):
+    # your code goes here
+    if len(node) == 0:
+        return 0
+    result = 0
+    for child in node:
+        result = max(result, get_depth(child))
+    return result + 1
+    
+xml1 = '''
+<feed xml:lang='en'>
+    <title>HackerRank</title>
+    <subtitle lang='en'>Programming challenges</subtitle>
+    <link rel='alternate' type='text/html' href='http://hackerrank.com/'/>
+    <updated>2013-12-25T12:00:00</updated>
+</feed>
+'''
+tree = etree.ElementTree(etree.fromstring(xml1))
+root = tree.getroot()
+
+print(get_depth(root)) # 1
+
+xml2 = '''
+<feed xml:lang='en'>
+  <title>HackerRank</title>
+  <subtitle lang='en'>Programming challenges</subtitle>
+  <link rel='alternate' type='text/html' href='http://hackerrank.com/'/>
+  <updated>2013-12-25T12:00:00</updated>
+  <entry>
+  	<author gender='male'>Harsh</author>
+    <question type='hard'>XML 1</question>
+    <description type='text'>This is related to XML parsing</description>
+  </entry>
+</feed>
+'''
+
+tree = etree.ElementTree(etree.fromstring(xml2))
+root = tree.getroot()
+
+print(get_depth(root)) # 2
+```
+
+    1
+    2
+    
+
+### Math
+
+[Polar Coordinates](https://www.hackerrank.com/challenges/polar-coordinates)
+
+
+```python
+import cmath
+c = complex("1+2j")
+print(abs(c))
+print(cmath.phase(c))
+```
+
+    2.23606797749979
+    1.1071487177940904
+    
+
+### Numpy
+
+[Polynomials](https://www.hackerrank.com/challenges/np-polynomials)
+
+
+```python
+import numpy
+
+coefs = list(map(float, input().split())) # 1.1 2 3
+x = float(input()) # 0
+print (numpy.polyval(coefs, x))
+```
+
+    1.1 2 3
+    0
+    3.0
+    
+
+[Linear Algebra](https://www.hackerrank.com/challenges/np-linear-algebra)
+
+
+```python
+n = int(input()) # 2
+A = [list(map(float, input().split())) for _ in range(n)] 
+# 1.1 1.1
+# 1.1 1.1
+print(round(numpy.linalg.det(A), 2)) # 0.0
+```
+
+    2
+    1.1 1.1
+    1.1 1.1
+    0.0
+    
+
+[Floor, Ceil and Rint](https://www.hackerrank.com/challenges/floor-ceil-and-rint)
+
+
+```python
+numpy.set_printoptions(sign=' ')
+
+A = numpy.array(list(map(float, input().split()))) # 1.1 2.2 3.3 4.4 5.5 6.6 7.7 8.8 9.9
+print(numpy.floor(A)) # [ 1.  2.  3.  4.  5.  6.  7.  8.  9.]
+print(numpy.ceil(A)) # [  2.   3.   4.   5.   6.   7.   8.   9.  10.]
+print(numpy.rint(A)) # [  1.   2.   3.   4.   6.   7.   8.   9.  10.]
+```
+
+    1.1 2.2 3.3 4.4 5.5 6.6 7.7 8.8 9.9
+    [ 1.  2.  3.  4.  5.  6.  7.  8.  9.]
+    [  2.   3.   4.   5.   6.   7.   8.   9.  10.]
+    [  1.   2.   3.   4.   6.   7.   8.   9.  10.]
+    
+
+[Sum and Prod](https://www.hackerrank.com/challenges/np-sum-and-prod)
+
+
+```python
+n, m = map(int, input().split()) # 2
+A = [list(map(float, input().split())) for _ in range(n)] 
+print(int(numpy.prod(numpy.sum(A, axis = 0))))
+```
+
+    2 2
+    1 2
+    3 4
+    24
+    
+
+### Itertools
+
+[itertools.product()](https://www.hackerrank.com/challenges/itertools-product)
+
+
+```python
+from itertools import product
+A = [1, 2] #A = list(map(int, input().split())) 
+B = [3, 4] #B = list(map(int, input().split())) 
+print(*product(A, B)) # use * for unpacking the containers
+```
+
+    (1, 3) (1, 4) (2, 3) (2, 4)
+    
+
+[itertools.permutations()](https://www.hackerrank.com/challenges/itertools-permutations)
+
+
+```python
+from itertools import permutations
+S = 'HACK'
+k = 2
+#S, k = input().split()
+#k = int(k)
+S = sorted(S)
+for s in [''.join(perm) for perm in permutations(S, k)]:
+    print(s) 
+```
+
+    AC
+    AH
+    AK
+    CA
+    CH
+    CK
+    HA
+    HC
+    HK
+    KA
+    KC
+    KH
+    
+
+[itertools.combinations()](https://www.hackerrank.com/challenges/itertools-combinations)
+
+
+```python
+from itertools import combinations
+S = 'HACK'
+k = 2
+#S, k = input().split()
+#k = int(k)
+S = sorted(S)
+for i in range(1, k+1):
+    for s in [''.join(perm) for perm in combinations(S, i)]:
+        print(s) 
+```
+
+    A
+    C
+    H
+    K
+    AC
+    AH
+    AK
+    CH
+    CK
+    HK
+    
+
+[itertools.combinations_with_replacement()](https://www.hackerrank.com/challenges/itertools-combinations-with-replacement)
+
+
+```python
+from itertools import combinations_with_replacement
+S = 'HACK'
+k = 2
+#S, k = input().split()
+#k = int(k)
+S = sorted(S)
+for s in [''.join(perm) for perm in combinations_with_replacement(S, k)]:
+    print(s) 
+```
+
+    AA
+    AC
+    AH
+    AK
+    CC
+    CH
+    CK
+    HH
+    HK
+    KK
+    
+
+[Compress the String!](https://www.hackerrank.com/challenges/compress-the-string)
+
+
+```python
+from itertools import groupby
+S = '1222311' # input()
+print(*[ (len(list(g)), int(k)) for k, g in groupby(S)])
+```
+
+    (1, 1) (3, 2) (1, 3) (2, 1)
     

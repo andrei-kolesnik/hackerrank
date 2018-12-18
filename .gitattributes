@@ -62,4 +62,4 @@
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
 
-Python/*.ipynb linguist-vendored
+*.ipynb linguist-vendored

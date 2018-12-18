@@ -119,6 +119,9 @@ Solutions for the practice problems on HackerRank.
 #### [No Idea!](https://www.hackerrank.com/challenges/no-idea) :: [[Python]](Python/Container.No-Idea.py) {medium}
 * sets
 
+#### [Hash Tables: Ransom Note](https://www.hackerrank.com/challenges/ctci-ransom-note) :: [[Python]](Python/Container.Hash-Tables-Ransom-Note.py) {medium}
+* collectios.Counter
+
 #### [QHEAP1](https://www.hackerrank.com/challenges/qheap1) :: [[Python]](Python/Container.QHEAP1.py) {easy}
 * `heapq`
 

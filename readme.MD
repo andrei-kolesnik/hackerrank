@@ -128,6 +128,9 @@ Solutions for the practice problems on HackerRank.
 #### [DefaultDict Tutorial](https://www.hackerrank.com/challenges/defaultdict-tutorial) :: [[Python]](Python/Container.DefaultDict-Tutorial.py) {easy}
 * `collections.defaultdict`
 
+#### [Piling Up!](https://www.hackerrank.com/challenges/piling-up) :: [[Python]](Python/Container.Piling-Up.py) {medium}
+* `collection.deque`
+
 ## SQL
 
 ### Basic Select

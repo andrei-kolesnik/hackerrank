@@ -110,9 +110,15 @@ Solutions for the practice problems on HackerRank.
 
 ### Itertools
 
+#### [Iterables and Iterators](https://www.hackerrank.com/challenges/iterables-and-iterators) :: [[Python]](Python/Itertools.Iterables-and-Iterators.py) {medium}
+* `itertools.permutations`
+
 #### [Compress the String!](https://www.hackerrank.com/challenges/compress-the-string) :: [[Python]](Python/Itertools.Compress-the-String.py) {medium}
 * `itertools.groupby`
 * list comprehension
+
+#### [Maximize It!](https://www.hackerrank.com/challenges/maximize-it) :: [[Python]](Python/Itertools.Maximize-It.py) {hard}
+* ``
 
 ### Algorithms / Data Structures / Containers
 

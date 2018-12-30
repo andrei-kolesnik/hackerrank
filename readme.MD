@@ -93,7 +93,10 @@ Solutions for the practice problems on HackerRank.
 * big integers
 * `vector.reverse_iterator`
 
+
+
 ## Python
+
 
 ### Easy problems (in one Jupyter Notebook) :: [[Python]](Python/HackerRank.md)
 
@@ -108,6 +111,10 @@ Solutions for the practice problems on HackerRank.
 #### [Merge the Tools!](https://www.hackerrank.com/challenges/merge-the-tools) :: [[Python]](Python/Strings.Merge-the-Tools.py) {medium}
 * substrings
 
+#### [ginortS](https://www.hackerrank.com/challenges/ginorts) :: [[Python]](Python/ginortS.py) {medium}
+* `sorted` with `key`
+
+
 ### Itertools
 
 #### [Iterables and Iterators](https://www.hackerrank.com/challenges/iterables-and-iterators) :: [[Python]](Python/Itertools.Iterables-and-Iterators.py) {medium}
@@ -118,7 +125,9 @@ Solutions for the practice problems on HackerRank.
 * list comprehension
 
 #### [Maximize It!](https://www.hackerrank.com/challenges/maximize-it) :: [[Python]](Python/Itertools.Maximize-It.py) {hard}
-* ``
+* `itertools.product`
+* `map`
+* list comprehension
 
 ### Algorithms / Data Structures / Containers
 

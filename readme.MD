@@ -3,6 +3,7 @@ Solutions for the practice problems on HackerRank.
 
 ## C++ / STL
 
+
 ### Strings
 
 #### [Attribute Parser](https://www.hackerrank.com/challenges/attribute-parser) :: [[C++ STL]](String.Attribute-Parser.STL) {medium}
@@ -11,6 +12,7 @@ Solutions for the practice problems on HackerRank.
 * `string.find_first_of`
 * `vector<string>`
 * `unordered_map<string, string>`
+
 
 ### Classes
 
@@ -59,6 +61,7 @@ Solutions for the practice problems on HackerRank.
 * 2-D `vector`
 * [Longest common subsequence problem](https://en.wikipedia.org/wiki/Longest_common_subsequence_problem)
 
+
 ### Algorithms / Data Structures / Containers
 
 #### [Deque](https://www.hackerrank.com/challenges/deque-stl) :: [[C++ STL]](Container.Deque.STL) {medium}
@@ -69,6 +72,9 @@ Solutions for the practice problems on HackerRank.
 
 #### [Is This a Binary Search Tree?](https://www.hackerrank.com/challenges/is-binary-search-tree) :: [[C++ STL]](Algorithm.Is-this-BST.STL) {medium}
 * Binary Search Tree
+
+#### [Tree: Level Order Traversal](https://www.hackerrank.com/challenges/tree-level-order-traversal) :: [[C++ STL]](Algorithm.Tree-Level-Order-Traversal.STL) {easy}
+* Binary Tree
 
 #### [Attending Workshops](https://www.hackerrank.com/challenges/attending-workshops) :: [[C++ STL]](Algorithm.Attending-Workshops.STL) {medium}
 * [Interval scheduling maximization problem](https://en.wikipedia.org/wiki/Interval_scheduling)

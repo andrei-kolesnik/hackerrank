@@ -121,6 +121,28 @@ Solutions for the practice problems on HackerRank.
 * `sorted` with `key`
 
 
+### Algorithms / Data Structures / Containers
+
+#### [No Idea!](https://www.hackerrank.com/challenges/no-idea) :: [[Python]](Python/Container.No-Idea.py) {medium}
+* sets
+
+#### [Count Triplets](https://www.hackerrank.com/challenges/count-triplets-1) :: [[Python]](Python/Container.Count-Triplets.py) {medium}
+* hash table
+* tuples
+
+#### [Hash Tables: Ransom Note](https://www.hackerrank.com/challenges/ctci-ransom-note) :: [[Python]](Python/Container.Hash-Tables-Ransom-Note.py) {medium}
+* collectios.Counter
+
+#### [QHEAP1](https://www.hackerrank.com/challenges/qheap1) :: [[Python]](Python/Container.QHEAP1.py) {easy}
+* `heapq`
+
+#### [DefaultDict Tutorial](https://www.hackerrank.com/challenges/defaultdict-tutorial) :: [[Python]](Python/Container.DefaultDict-Tutorial.py) {easy}
+* `collections.defaultdict`
+
+#### [Piling Up!](https://www.hackerrank.com/challenges/piling-up) :: [[Python]](Python/Container.Piling-Up.py) {medium}
+* `collection.deque`
+
+
 ### Itertools
 
 #### [Iterables and Iterators](https://www.hackerrank.com/challenges/iterables-and-iterators) :: [[Python]](Python/Itertools.Iterables-and-Iterators.py) {medium}
@@ -135,24 +157,11 @@ Solutions for the practice problems on HackerRank.
 * `map`
 * list comprehension
 
-### Algorithms / Data Structures / Containers
 
-#### [No Idea!](https://www.hackerrank.com/challenges/no-idea) :: [[Python]](Python/Container.No-Idea.py) {medium}
-* sets
 
-#### [Hash Tables: Ransom Note](https://www.hackerrank.com/challenges/ctci-ransom-note) :: [[Python]](Python/Container.Hash-Tables-Ransom-Note.py) {medium}
-* collectios.Counter
-
-#### [QHEAP1](https://www.hackerrank.com/challenges/qheap1) :: [[Python]](Python/Container.QHEAP1.py) {easy}
-* `heapq`
-
-#### [DefaultDict Tutorial](https://www.hackerrank.com/challenges/defaultdict-tutorial) :: [[Python]](Python/Container.DefaultDict-Tutorial.py) {easy}
-* `collections.defaultdict`
-
-#### [Piling Up!](https://www.hackerrank.com/challenges/piling-up) :: [[Python]](Python/Container.Piling-Up.py) {medium}
-* `collection.deque`
 
 ## SQL
+
 
 ### Basic Select
 
@@ -167,6 +176,7 @@ Solutions for the practice problems on HackerRank.
 
 #### [Weather Observation Station 11](https://www.hackerrank.com/challenges/weather-observation-station-11) :: [[SQL]](SQL/Weather-Observation-Station-11.SQL) {easy}
 * not starting or not ending with a vowel
+
 
 ### Basic Join
 
@@ -184,6 +194,7 @@ Solutions for the practice problems on HackerRank.
 
 #### [Contest Leaderboard](https://www.hackerrank.com/challenges/contest-leaderboard) :: [[SQL]](SQL/Contest-Leaderboard.SQL)
 * `inner join`, `group by`, `having`, `sum`, `max`
+
 
 ### Aggregation
 
@@ -211,6 +222,7 @@ Solutions for the practice problems on HackerRank.
 #### [Print Prime Numbers](https://www.hackerrank.com/challenges/print-prime-numbers) :: [[SQL]](SQL/Print-Prime-Numbers.SQL)
 * Control of Flow: `while`, `break`, `if`
 
+
 ### Advanced Select
 
 #### [Not A Triangle](https://www.hackerrank.com/challenges/what-type-of-triangle) :: [[SQL]](SQL/Type-of-Triangle.SQL) {easy}
@@ -227,6 +239,7 @@ Solutions for the practice problems on HackerRank.
 
 #### [New Companies](https://www.hackerrank.com/challenges/the-company) :: [[SQL]](SQL/New-Companies.SQL) {medium}
 * `join`, `count distinct`, `group by`
+
 
 ### Advanced Join
 

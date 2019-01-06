@@ -99,6 +99,9 @@ Solutions for the practice problems on HackerRank.
 * big integers
 * `vector.reverse_iterator`
 
+#### [Roads and Libraries](https://www.hackerrank.com/challenges/torque-and-development) :: [[C++ STL]](Algorithm.Roads-and-Libraries.STL) {medium}
+* graphs
+* depth first search
 
 
 ## Python

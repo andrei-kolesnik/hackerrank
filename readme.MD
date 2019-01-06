@@ -102,6 +102,7 @@ Solutions for the practice problems on HackerRank.
 #### [Roads and Libraries](https://www.hackerrank.com/challenges/torque-and-development) :: [[C++ STL]](Algorithm.Roads-and-Libraries.STL) {medium}
 * graphs
 * depth first search
+* connected components
 
 
 ## Python

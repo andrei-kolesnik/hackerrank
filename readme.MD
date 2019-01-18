@@ -13,6 +13,17 @@ Solutions for the practice problems on HackerRank.
 * `vector<string>`
 * `unordered_map<string, string>`
 
+#### [The Minion Game](https://www.hackerrank.com/challenges/the-minion-game) :: [[Python]](Python/Strings.The-Minion-Game.py) {medium}
+* substrings
+* Counter class (in Version 1)
+
+#### [Merge the Tools!](https://www.hackerrank.com/challenges/merge-the-tools) :: [[Python]](Python/Strings.Merge-the-Tools.py) {medium}
+* substrings
+
+#### [ginortS](https://www.hackerrank.com/challenges/ginorts) :: [[Python]](Python/ginortS.py) {medium}
+* `sorted` with `key`
+
+
 
 ### Classes
 
@@ -67,8 +78,24 @@ Solutions for the practice problems on HackerRank.
 #### [Quicksort 1 - Partition](https://www.hackerrank.com/challenges/quicksort1) :: [[C++ STL]](Algorithm.Quicksort-1-Partition.STL) [[PHP]](PHP/Algorithm.Quicksort-1-Partition.PHP) {easy}
 * Quicksort
 
+#### [No Idea!](https://www.hackerrank.com/challenges/no-idea) :: [[Python]](Python/Container.No-Idea.py) {medium}
+* sets
+
+#### [Count Triplets](https://www.hackerrank.com/challenges/count-triplets-1) :: [[Python]](Python/Container.Count-Triplets.py) {medium}
+* hash table
+* tuples
+
 #### [Deque](https://www.hackerrank.com/challenges/deque-stl) :: [[C++ STL]](Container.Deque.STL) {medium}
 * `deque<int>`
+
+#### [Piling Up!](https://www.hackerrank.com/challenges/piling-up) :: [[Python]](Python/Container.Piling-Up.py) {medium}
+* `collection.deque`
+
+#### [DefaultDict Tutorial](https://www.hackerrank.com/challenges/defaultdict-tutorial) :: [[Python]](Python/Container.DefaultDict-Tutorial.py) {easy}
+* `collections.defaultdict`
+
+#### [Hash Tables: Ransom Note](https://www.hackerrank.com/challenges/ctci-ransom-note) :: [[Python]](Python/Container.Hash-Tables-Ransom-Note.py) {medium}
+* collectios.Counter
 
 #### [Binary Search Tree : Lowest Common Ancestor](https://www.hackerrank.com/challenges/binary-search-tree-lowest-common-ancestor) :: [[C++ STL]](Algorithm.BST-Lowest-Common-Ancestor.STL) {easy}
 * Binary Search Tree
@@ -95,8 +122,8 @@ Solutions for the practice problems on HackerRank.
 #### [Array Manipulation](https://www.hackerrank.com/challenges/crush) :: [[C++ STL]](Algorithm.Array-Manipulation.STL) {hard}
 * [Difference Array | Range update query in O(1)](https://www.geeksforgeeks.org/difference-array-range-update-query-o1/)
 
-#### [QHEAP1](https://www.hackerrank.com/challenges/qheap1) :: [[C++ STL]](Container.QHEAP1.STL) {easy}
-* `heap<int>`
+#### [QHEAP1](https://www.hackerrank.com/challenges/qheap1) :: [[C++ STL]](Container.QHEAP1.STL) [[Python]](Python/Container.QHEAP1.py) {easy}
+* `heap<int>` (C++) / `heapq` (Python)
 
 #### [Extra Long Factorials](https://www.hackerrank.com/challenges/extra-long-factorials) :: [[C++ STL]](Algorithm.Extra-Long-Factorials.STL) {medium}
 * big integers
@@ -108,47 +135,13 @@ Solutions for the practice problems on HackerRank.
 * connected components
 
 
+
 ## Python
 
 
 ### Easy problems (in one Jupyter Notebook) :: [[Python]](Python/HackerRank.md)
 
 ### Medium and Hard problems (in individual files) :: [[Python]](Python)
-
-### Strings
-
-#### [The Minion Game](https://www.hackerrank.com/challenges/the-minion-game) :: [[Python]](Python/Strings.The-Minion-Game.py) {medium}
-* substrings
-* Counter class (in Version 1)
-
-#### [Merge the Tools!](https://www.hackerrank.com/challenges/merge-the-tools) :: [[Python]](Python/Strings.Merge-the-Tools.py) {medium}
-* substrings
-
-#### [ginortS](https://www.hackerrank.com/challenges/ginorts) :: [[Python]](Python/ginortS.py) {medium}
-* `sorted` with `key`
-
-
-### Algorithms / Data Structures / Containers
-
-#### [No Idea!](https://www.hackerrank.com/challenges/no-idea) :: [[Python]](Python/Container.No-Idea.py) {medium}
-* sets
-
-#### [Count Triplets](https://www.hackerrank.com/challenges/count-triplets-1) :: [[Python]](Python/Container.Count-Triplets.py) {medium}
-* hash table
-* tuples
-
-#### [Hash Tables: Ransom Note](https://www.hackerrank.com/challenges/ctci-ransom-note) :: [[Python]](Python/Container.Hash-Tables-Ransom-Note.py) {medium}
-* collectios.Counter
-
-#### [QHEAP1](https://www.hackerrank.com/challenges/qheap1) :: [[Python]](Python/Container.QHEAP1.py) {easy}
-* `heapq`
-
-#### [DefaultDict Tutorial](https://www.hackerrank.com/challenges/defaultdict-tutorial) :: [[Python]](Python/Container.DefaultDict-Tutorial.py) {easy}
-* `collections.defaultdict`
-
-#### [Piling Up!](https://www.hackerrank.com/challenges/piling-up) :: [[Python]](Python/Container.Piling-Up.py) {medium}
-* `collection.deque`
-
 
 ### Itertools
 
@@ -163,7 +156,6 @@ Solutions for the practice problems on HackerRank.
 * `itertools.product`
 * `map`
 * list comprehension
-
 
 
 

@@ -64,7 +64,7 @@ Solutions for the practice problems on HackerRank.
 
 ### Algorithms / Data Structures / Containers
 
-#### [Quicksort 1 - Partition](https://www.hackerrank.com/challenges/quicksort1) :: [[C++ STL]](Algorithm.Quicksort-1-Partition.STL) {easy}
+#### [Quicksort 1 - Partition](https://www.hackerrank.com/challenges/quicksort1) :: [[C++ STL]](Algorithm.Quicksort-1-Partition.STL) [[PHP]](PHP/Algorithm.Quicksort-1-Partition.PHP) {easy}
 * Quicksort
 
 #### [Deque](https://www.hackerrank.com/challenges/deque-stl) :: [[C++ STL]](Container.Deque.STL) {medium}

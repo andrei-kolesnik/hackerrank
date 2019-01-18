@@ -1,7 +1,7 @@
 # HackerRank Problems
 Solutions for the practice problems on HackerRank.
 
-## C++ / STL
+## C++ / Python / PHP
 
 
 ### Strings

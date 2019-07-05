@@ -257,3 +257,8 @@ Solutions for the practice problems on HackerRank.
 #### [Symmetric Pairs](https://www.hackerrank.com/challenges/symmetric-pairs)  :: [[SQL]](SQL/Symmetric-Pairs.SQL) {medium}
 * `with`, `row_number over`
 * Common Table Expressions (CTE's)
+
+
+## Linux Shell
+
+### [[bash]](bash)

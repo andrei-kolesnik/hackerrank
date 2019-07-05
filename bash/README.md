@@ -30,13 +30,13 @@ echo "You entered $gender"
 
 ## File Redirection
 ```Bash
-ls -l > list.txt # output to file, errors to console
-ls -l > list.txt 2>&1 # output and errors to file
-ls -l &> list.txt # shortcut for output and errors to file
+ls -l > list # output to file, errors to console
+ls -l > list 2>&1 # output and errors to file
+ls -l &> list # shortcut for output and errors to file
 ```
 
 ```Bash
-filter body.txt | cat header.txt /dev/fd/0 footer.txt | lp # prints header+body+footer
+filter body | cat header /dev/fd/0 footer | lp # prints header+body+footer
 ```
 
 ```Bash
@@ -288,18 +288,18 @@ printf "%.3f\n" $(echo "2/3" | bc -l)
 
 #### create a file from command line
 ```Bash
-cat > filename.txt # press [Enter]
+cat > filename # press [Enter]
 # start typing 
 # press [Enter] for new lines
 # press [Ctrl+Z] when done
->>> [1]+  Stopped cat > filename.txt
+>>> [1]+  Stopped cat > filename
 ```
 
 ### `cut` -- cut out selected portions of each line of a file
 
 #### 3rd character on every line of a file
 ```Bash
-cut -c3 filename.txt
+cut -c3 filename
 ```
 #### 2nd and 4th character on every line
 ```Bash
@@ -319,11 +319,38 @@ cut -c2-
 ```
 #### first 3 fields (tab separated) in a file
 ```Bash
-cut -f-3 filename.txt
+cut -f-3 filename
 ```
 #### fourth word of every line sentence (space separated) in a file
 ```Bash
-cut -d ' ' -f4 filename.txt
+cut -d ' ' -f4 filename
+```
+
+### `grep` -- file pattern searcher
+
+#### search for the given string in a single file
+```Bash
+grep "literal_string" filename
+```
+#### search for the given string in all log files, case insensitive
+```Bash
+grep -i "literal_string" *.log
+```
+#### search for the given word in the stdin
+```Bash
+grep -w "the"
+```
+#### search for the given multiple words in the stdin, case sensitive
+```Bash
+grep -Ew 'the|that|then|those'
+```
+#### search for the given string in all log files, recursively
+```Bash
+grep -r "literal_string" *.log
+```
+#### search for the lines without the given word in the stdin
+```Bash
+grep -v "the"
 ```
 
 ### `head` -- display first lines of a file
@@ -344,24 +371,21 @@ head -c20
 ```Bash
 paste -d, -s
 ```
-
 #### merge lines in a file by pasting the data into 2 columns using the default tab delimiters
 ```Bash
-paste - - < filename.txt
+paste - - < filename
 >>> line1    line2
 >>> line3    ...
 ```
-
 #### merge a file into 3 columns using 2 different delimiters
 ```Bash
-paste -d ':,' - - - < filename.txt
+paste -d ':,' - - - < filename
 >>> line1:line2,line3
 >>> line4:line5,...
 ```
-
 #### paste contents of 2 files side by side with a comma separator
 ```Bash
-paste -d, filename1.txt filename2.txt
+paste -d, filename1 filename2
 ```
 	
 ### `sort` -- sort or merge records (lines) of text and binary files

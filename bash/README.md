@@ -340,7 +340,30 @@ head -c20
 
 ### `paste` -- merge corresponding or subsequent lines of files
 
+#### join all lines using the comma delimiter
+```Bash
+paste -d, -s
+```
 
+#### merge lines in a file by pasting the data into 2 columns using the default tab delimiters
+```Bash
+paste - - < filename.txt
+>>> line1    line2
+>>> line3    ...
+```
+
+#### merge a file into 3 columns using 2 different delimiters
+```Bash
+paste -d ':,' - - - < filename.txt
+>>> line1:line2,line3
+>>> line4:line5,...
+```
+
+#### paste contents of 2 files side by side with a comma separator
+```Bash
+paste -d, filename1.txt filename2.txt
+```
+	
 ### `sort` -- sort or merge records (lines) of text and binary files
 
 #### sort a file in alphabetical order

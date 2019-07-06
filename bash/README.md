@@ -387,7 +387,43 @@ paste -d ':,' - - - < filename
 ```Bash
 paste -d, filename1 filename2
 ```
-	
+
+### `sed` -- stream editor
+
+#### change one word to another once
+```Bash
+sed 's/day/night/'
+```
+#### change the second occurrence of a word to another
+```Bash
+sed 's/day/night/2'
+```
+#### change all the occurrences of a word starting from the second to another (keep the first one)
+```Bash
+sed 's/day/night/2g'
+```
+#### change one path to another, using a different delimiter
+```Bash
+sed 's|/usr|/admin|'
+```
+#### put every word into parenthesis
+```Bash
+sed 's/[a-z]*/(&)/g'
+```
+#### delete empty lines in a file
+```Bash
+sed '/^$/d' filename
+```
+#### print only lines containing the given word
+```Bash
+sed '/word/p'
+```
+#### mask first 12 digit of a credit card number
+```Bash
+echo "1234 1234 1234 1234" | sed -E 's/[0-9]{4} /**** /g' # -E on mac, -r on LINUX
+>>> **** **** **** 1234
+```
+
 ### `sort` -- sort or merge records (lines) of text and binary files
 
 #### sort a file in alphabetical order

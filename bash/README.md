@@ -284,6 +284,65 @@ printf "%.3f\n" $(echo "2/3" | bc -l)
 
 ## Text processing
 
+### `awk` -- pattern-directed scanning and processing language
+
+#### print all the lines in a file
+```Bash
+awk '{print;}' filename
+```
+#### print all the lines matching a pattern
+```Bash
+awk '/1234/' filename
+# or
+awk '/1234/ {print;}' filename
+```
+#### print all the lines matching multiple patterns
+```Bash
+awk '/1234/ 
+/5678/' filename
+```
+#### print field #4 (space separated)
+```Bash
+awk '{print $4;}' filename
+```
+#### print the first and the last field
+```Bash
+awk '{print $1,$NF;}' filename
+```
+#### print the fields as a report with a header and a footer
+```Bash
+awk 'BEGIN {print "Field1\tField2\tField3\tField4";}
+{print $1,"\t",$2,"\t",$3,"\t",$4;}
+END{print "Report Generated\n--------------";
+}' filename
+```
+#### print the lines under a condition
+```Bash
+awk '$1 > 1000' filename # comparison
+awk '$4 ~/1234/' filename # regular expression
+```
+#### count the lines matching a condition
+```Bash
+awk 'BEGIN { count=0; }
+$4 ~ /1234/ { count++; } 
+END { print "Total count =", count; }' filename 
+```
+#### using conditions
+```Bash
+awk '{
+if ($2 == "" || $3 == "")
+	print "Required fields are missing for record", NR;
+else
+	print "Record",NR,"is valid";
+}' filename 
+# or with a ternary operator
+awk '{ print ($2 == "" || $3 == "") ? "Required fields are missing" : "Record is valid";}' filename
+```
+#### concatenate every 2 lines of input with a semicolon
+```Bash
+awk 'ORS = NR%2 ? ";" : "\n"'
+```
+
 ### `cat` -- concatenate and print files
 
 #### create a file from command line

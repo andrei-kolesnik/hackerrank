@@ -2,13 +2,13 @@
 
 ## Output
 
-```Bash
+```bash
 echo -n "HELLO " # -n option stops echo from breaking the line
 echo 'WORLD'
 > HELLO WORLD
 ```
 
-```Bash
+```bash
 echo Welcome, $USER!
 echo Your current directory is $PWD
 > Welcome, andrei!
@@ -16,45 +16,55 @@ echo Your current directory is $PWD
 ```
 
 ## Input
-```Bash
+```bash
 read name
 echo Welcome, $name!
 > Andrei
 > Welcome, Andrei!
 ```
 #### with prompt, silent, limited to 1 character
-```Bash
+```bash
 read -p "Enter your gender: " -s -n 1 gender 
 echo "You entered $gender"
 ```
 
 ## File Redirection
-```Bash
-ls -l > list # output to file, errors to console
-ls -l > list 2>&1 # output and errors to file
-ls -l &> list # shortcut for output and errors to file
+#### output to file, errors to console
+```bash
+ls -l > filename 
+```
+#### output and errors to file
+```bash
+ls -l > filename 2>&1
+```
+#### output and errors to file (shortcut)
+```bash
+ls -l &> filename
+```
+#### print header+body+footer from files
+```bash
+filter body | cat header /dev/fd/0 footer | lp
 ```
 
-```Bash
-filter body | cat header /dev/fd/0 footer | lp # prints header+body+footer
-```
-
-```Bash
+```bash
 ls > /dev/null; echo $? # success
 >>> 0
 ```
-```Bash
+```bash
 ls --bad-option 2> /dev/null; echo $? # illegal option
 >>> 1 
 ```
-```Bash
+```bash
 ./non-existing.file 2>/dev/null; echo $? # command/file not found
 >>> 127
 ```
 
-## Conditions
-### Comparing numbers
-```Bash
+## Control Structures
+
+### Conditions
+
+#### Comparing numbers
+```bash
 X=3
 Y=4
 if [ $X -lt $Y ]
@@ -64,8 +74,8 @@ fi
 > $X=3 is smaller than $Y=4
 ```
 
-### Using logic
-```Bash
+#### Using logic
+```bash
 A=3
 B=-4
 if [ $A -gt 0 ] && [ $B -gt 0 ]; then
@@ -84,8 +94,8 @@ fi
 > Either A or B is positive
 ```
 
-### Comparing strings
-```Bash
+#### Comparing strings
+```bash
 X="text"
 Y=""
 
@@ -94,13 +104,13 @@ if [ -n "$X" ]; then
 fi
 > Variable X is not empty
 ```
-```Bash
+```bash
 if [ ! -n "$Y" ]; then
   echo "Variable Y is empty"
 fi
 > Variable Y is empty
 ```
-```Bash
+```bash
 if [ $X != "Text" ]; then
   echo "Variable X is not 'Text'"
 fi
@@ -123,7 +133,7 @@ else
 fi
 ```
 #### using if
-```Bash
+```bash
 read ch
 
 if [ $ch = "Y" ] || [ $ch = "y" ]; then
@@ -133,7 +143,7 @@ elif [ $ch = "N" ] || [ $ch = "n" ]; then
 fi
 ```
 #### using regular expressions
-```Bash
+```bash
 if [[ "$ch" == [yY] ]]; then
 	echo "YES"
 elif [[ "$ch" == [nN] ]]; then
@@ -141,15 +151,15 @@ elif [[ "$ch" == [nN] ]]; then
 fi
 ```
 #### using case
-```Bash
+```bash
 case $ch in
 	Y | y) echo "YES";;
 	N | n) echo "NO";;
 esac
 ```
 
-### Checking file existence
-```Bash
+#### Checking file existence
+```bash
 file="bash.md"
 if [ -e $file ]; then
 	echo File $file exists
@@ -160,38 +170,38 @@ fi
 ```
 
 ### List of all the operators
-```Bash
+```bash
 help test 
 ```
 
-## Loops
+### Loops
 
-### `for` loops
-```Bash
+#### `for` loops
+```bash
 for X in 1 2 3; do
 	echo -n "$X "
 done
 > 1 2 3
 ```
-```Bash
+```bash
 for X in {1..3}; do
 	echo -n "$X "
 done
 > 1 2 3
 ```
-```Bash
+```bash
 for X in {1..5..2}; do # Bash versions 4.0+ 
 	echo -n "$X "
 done
 > 1 2 3
 ```
-```Bash
+```bash
 for (( i=1; i<=6; i+=2 )); do 
 	echo -n "$i " 
 done
 > 1 3 5
 ```
-```Bash
+```bash
 i=0
 for (( ; ; )); do # infinite loop
   i=$((i+1))
@@ -205,15 +215,14 @@ for (( ; ; )); do # infinite loop
 done
 > 1 3 5
 ```
-
-### `seq` command (outdated)
-```Bash
+#### using `seq` command (outdated)
+```bash
 echo `seq 1 2 5` # "echo" to convert new lines into spaces
 > 1 3 5
 ```
 
-### `while` Loops
-```Bash
+#### `while` Loops
+```bash
 X=0
 while [ $X -le 3 ]; do
 	echo -n "$X "
@@ -222,36 +231,206 @@ done
 > 1 2 3
 ```
 
+
+## Arrays
+
+### Declaring and Assigning
+
+#### automatically
+```bash
+os[0]='Unix'
+os[1]='MacOS'
+os[2]='Windows'
+echo ${os[0]}
+>>> Unix
+```
+#### at once
+```bash
+os=('Unix' 'MacOS' 'Windows')
+```
+#### declaring with assigning
+```bash
+declare -a os=('Unix' 'MacOS' 'Windows')
+echo ${os[0]}
+>>> Unix
+```
+
+### Reading from Input 
+
+#### new line separated
+```bash
+os=( $(cat) )
+```
+```bash
+while read line
+do
+    os=("${os[@]}" $line)
+done
+```
+#### space separated
+```bash
+read -a os 
+```
+#### from file (word by word)
+```bash
+os=( `cat “inputfile” `)
+# or
+os=( `< “inputfile” `)
+```
+
+### Concatenating Two Arrays
+```bash
+os1=('Unix' 'MacOS' 'Windows')
+os2=('OS/360' 'MS-DOS')
+os=("${os1[@]}" "${os2[@]}")
+echo "${os[@]}"
+>>> Unix MacOS Windows OS/360 MS-DOS
+```
+
+### Copying
+```bash
+os1=('Unix' 'MacOS' 'Windows')
+os2=("${os1[@]}")
+echo "${os2[@]}"
+>>> Unix MacOS Windows
+```
+
+### Adding Elements
+#### version 1
+```bash
+os=("${os[@]}" 'OS/360') 
+```
+#### version 2 (# Bash versions 3.0+)
+```bash
+os+=('OS/360') 
+```
+
+### Removing Elements
+
+#### by setting to null
+```bash
+unset os[1]
+echo ${os[@]}
+>>> Unix Windows
+```
+#### removing completely
+```bash
+pos=1
+os=(${os[@]:0:$pos} ${os[@]:$(($pos + 1))})
+echo ${os[@]}
+```
+#### entire array
+```bash
+unset os
+```
+
+### Printing
+
+#### the whole array
+```bash
+echo ${os[@]}
+# or
+echo ${os[*]}
+>>> Unix MacOS Windows
+```
+#### individually
+```bash
+echo ${os} # no index - 0 is assumed
+>>> Unix
+echo ${os[1]}
+>>> MacOS
+```
+#### in a loop
+```bash
+for e in ${os[@]}; do
+	echo $e
+done
+>>> Unix
+>>> MacOS
+>>> Windows
+```
+#### using indices
+```bash
+for i in ${!os[@]}; do
+	echo $i: ${os[$i]}
+done
+>>> 0: Unix
+>>> 1: MacOS
+>>> 2: Windows
+```
+
+### Sizing
+
+#### of the whole array
+```bash
+echo ${#os[@]}
+>>> 3
+```
+#### of a single element
+```bash
+echo ${#os[1]}
+>>> 5
+```
+
+### Slicing
+
+#### an array
+```bash
+echo ${os[@]:1:2}
+>>> MacOS Windows
+```
+#### an element
+```bash
+echo ${os[1]:1:2}
+>>> ac
+```
+
+### Searching and Replacing
+```bash
+echo ${os[@]/Unix/Linux}
+>>> Linux MacOS Windows
+# will not permanently replace the array content:
+echo ${os[@]}
+>>> Unix MacOS Windows
+```
+#### removing by a pattern
+```bash
+os=( ${os[@]/*[Aa]*/} ) 
+# will remove any words with 'A' or 'a'
+echo ${os[@]}
+>>> Unix Windows
+```
+
 ## Command Substitution
 
 ### Brace Expansion: `$(command)`
-```Bash
+```bash
 files=$(ls)
 echo "$files" # double quotes to preserve new lines (otherwise converted to spaces)
 > test.sh
 > ...
 ```
-```Bash
+```bash
 X=$(expr 2 + $(expr 1 + 2)) # can be nested
 echo $X
 > 5
 ```
 
 ### Back-tick Expansion: `` `command` ``
-```Bash
+```bash
 files=`ls`
 echo "$files" # double quotes to preserve new lines (otherwise converted to spaces)
 > test.sh
 > ...
 ```
-```Bash
+```bash
 X=`expr 2 + 3` # cannot be nested
 echo $X
 > 5
 ```
 
 ### Arithmetic Expansion: `$((expression))`
-```Bash
+```bash
 num1=1
 num2=2
 num3=3
@@ -287,48 +466,47 @@ printf "%.3f\n" $(echo "2/3" | bc -l)
 ### `awk` -- pattern-directed scanning and processing language
 
 #### print all the lines in a file
-```Bash
+```bash
 awk '{print;}' filename
 ```
 #### print all the lines matching a pattern
-```Bash
+```bash
 awk '/1234/' filename
 # or
 awk '/1234/ {print;}' filename
 ```
 #### print all the lines matching multiple patterns
-```Bash
+```bash
 awk '/1234/ 
 /5678/' filename
 ```
 #### print field #4 (space separated)
-```Bash
+```bash
 awk '{print $4;}' filename
 ```
 #### print the first and the last field
-```Bash
+```bash
 awk '{print $1,$NF;}' filename
 ```
 #### print the fields as a report with a header and a footer
-```Bash
+```bash
 awk 'BEGIN {print "Field1\tField2\tField3\tField4";}
 {print $1,"\t",$2,"\t",$3,"\t",$4;}
-END{print "Report Generated\n--------------";
-}' filename
+END {print "Report Generated\n--------------";}' filename
 ```
 #### print the lines under a condition
-```Bash
+```bash
 awk '$1 > 1000' filename # comparison
 awk '$4 ~/1234/' filename # regular expression
 ```
 #### count the lines matching a condition
-```Bash
+```bash
 awk 'BEGIN { count=0; }
 $4 ~ /1234/ { count++; } 
 END { print "Total count =", count; }' filename 
 ```
 #### using conditions
-```Bash
+```bash
 awk '{
 if ($2 == "" || $3 == "")
 	print "Required fields are missing for record", NR;
@@ -339,14 +517,14 @@ else
 awk '{ print ($2 == "" || $3 == "") ? "Required fields are missing" : "Record is valid";}' filename
 ```
 #### concatenate every 2 lines of input with a semicolon
-```Bash
+```bash
 awk 'ORS = NR%2 ? ";" : "\n"'
 ```
 
 ### `cat` -- concatenate and print files
 
 #### create a file from command line
-```Bash
+```bash
 cat > filename # press [Enter]
 # start typing 
 # press [Enter] for new lines
@@ -357,128 +535,128 @@ cat > filename # press [Enter]
 ### `cut` -- cut out selected portions of each line of a file
 
 #### 3rd character on every line of a file
-```Bash
+```bash
 cut -c3 filename
 ```
 #### 2nd and 4th character on every line
-```Bash
+```bash
 cut -c2,4
 ```
 #### from 2nd to 4th character on every line
-```Bash
+```bash
 cut -c2-4
 ```
 #### first four characters on every line
-```Bash
+```bash
 cut -c-4
 ```
 #### from 2nd character to the end on every line
-```Bash
+```bash
 cut -c2-
 ```
 #### first 3 fields (tab separated) in a file
-```Bash
+```bash
 cut -f-3 filename
 ```
 #### fourth word of every line sentence (space separated) in a file
-```Bash
+```bash
 cut -d ' ' -f4 filename
 ```
 
 ### `grep` -- file pattern searcher
 
 #### search for the given string in a single file
-```Bash
+```bash
 grep "literal_string" filename
 ```
 #### search for the given string in all log files, case insensitive
-```Bash
+```bash
 grep -i "literal_string" *.log
 ```
 #### search for the given word in the stdin
-```Bash
+```bash
 grep -w "the"
 ```
 #### search for the given multiple words in the stdin, case sensitive
-```Bash
+```bash
 grep -Ew 'the|that|then|those'
 ```
 #### search for the given string in all log files, recursively
-```Bash
+```bash
 grep -r "literal_string" *.log
 ```
 #### search for the lines without the given word in the stdin
-```Bash
+```bash
 grep -v "the"
 ```
 
 ### `head` -- display first lines of a file
 
 #### first 20 lines of an input file
-```Bash
+```bash
 head -n20
 head -20 # or
 ```
 #### first 20 characters
-```Bash
+```bash
 head -c20
 ```
 
 ### `paste` -- merge corresponding or subsequent lines of files
 
 #### join all lines using the comma delimiter
-```Bash
+```bash
 paste -d, -s
 ```
 #### merge lines in a file by pasting the data into 2 columns using the default tab delimiters
-```Bash
+```bash
 paste - - < filename
 >>> line1    line2
 >>> line3    ...
 ```
 #### merge a file into 3 columns using 2 different delimiters
-```Bash
+```bash
 paste -d ':,' - - - < filename
 >>> line1:line2,line3
 >>> line4:line5,...
 ```
 #### paste contents of 2 files side by side with a comma separator
-```Bash
+```bash
 paste -d, filename1 filename2
 ```
 
 ### `sed` -- stream editor
 
 #### change one word to another once
-```Bash
+```bash
 sed 's/day/night/'
 ```
 #### change the second occurrence of a word to another
-```Bash
+```bash
 sed 's/day/night/2'
 ```
 #### change all the occurrences of a word starting from the second to another (keep the first one)
-```Bash
+```bash
 sed 's/day/night/2g'
 ```
 #### change one path to another, using a different delimiter
-```Bash
+```bash
 sed 's|/usr|/admin|'
 ```
 #### put every word into parenthesis
-```Bash
+```bash
 sed 's/[a-z]*/(&)/g'
 ```
 #### delete empty lines in a file
-```Bash
+```bash
 sed '/^$/d' filename
 ```
 #### print only lines containing the given word
-```Bash
+```bash
 sed '/word/p'
 ```
 #### mask first 12 digit of a credit card number
-```Bash
+```bash
 echo "1234 1234 1234 1234" | sed -E 's/[0-9]{4} /**** /g' # -E on mac, -r on LINUX
 >>> **** **** **** 1234
 ```
@@ -486,35 +664,35 @@ echo "1234 1234 1234 1234" | sed -E 's/[0-9]{4} /**** /g' # -E on mac, -r on LIN
 ### `sort` -- sort or merge records (lines) of text and binary files
 
 #### sort a file in alphabetical order
-```Bash
+```bash
 sort
 ```
 #### sort a file in reverse alphabetical order
-```Bash
+```bash
 sort -r
 ```
 #### sort by number
-```Bash
+```bash
 sort -n
 ```
 #### sort by second column/field
-```Bash
+```bash
 sort -k2
 ```
 #### sort by second column numerically, and then third column alphabetically in reverse, in a tab-separated file
-```Bash
+```bash
 sort -k2n,2 -k3r,3 -t $'-'
 ```
 
 ### `tail` -- display the last part of a file
 
 #### last 20 lines
-```Bash
+```bash
 tail -n20
 tail -20 # or
 ```
 #### last 20 characters
-```Bash
+```bash
 tail -c20
 ```
 
@@ -531,42 +709,42 @@ tr a-z A-Z
 tr [:lower:] [:upper:]
 ```
 #### translate spaces into tabs, squeeze the repetition
-```Bash
+```bash
 tr -s [:space:] '\t'
 ```
 #### remove all digits
-```Bash
+```bash
 tr -d [:digit:]
 ```
 #### remove all characters except digits
-```Bash
+```bash
 tr -cd [:digit:]
 ```
 #### all non-printable characters
-```Bash
+```bash
 tr -cd [:print:]
 ```
 #### join all the lines in a file into a single line
-```Bash
+```bash
 tr -s '\n' ' '
 ```
 
 ### `uniq` -- report or filter out repeated lines in a file
 
 #### remove duplicate lines and display unique lines 
-```Bash
+```bash
 uniq
 ```
 #### count occurrence of lines 
-```Bash
+```bash
 uniq -c
 ```
 #### print only repeated lines
-```Bash
+```bash
 uniq -d
 ```
 #### print only unique lines
-```Bash
+```bash
 uniq -u
 ```
 

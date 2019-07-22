@@ -1,5 +1,46 @@
 # Linux / Bash Shell Guide
 
+## General Syntax
+
+#### Creating a new script file
+```bash
+cat > test.sh
+#!/bin/bash
+echo Hello World!
+^C
+```
+#### Setting permissions to execute for the current user
+```bash
+chmod u+x test.sh
+# or
+chmod 755 test.sh
+```
+#### Running
+```bash
+./test.sh
+
+>>> Hello World!
+```
+
+### Comments
+```bash
+# This is a comment
+```
+
+### Joining Lines by ";"
+```bash
+echo "Line 1"; echo "Line 2"
+>>> Line 1
+>>> Line 2
+```
+
+### Splitting Lines by "\"
+```bash
+echo "Long \
+Long Line"
+>>> Long Long Line
+```
+
 ## Output
 
 ```bash
@@ -15,6 +56,11 @@ echo Your current directory is $PWD
 > Your current directory is /Users/andrei/projects
 ```
 
+```bash
+echo *
+>>> {list of the files in the current folder, same as `ls`}
+```
+
 ## Input
 ```bash
 read name
@@ -27,6 +73,71 @@ echo Welcome, $name!
 read -p "Enter your gender: " -s -n 1 gender 
 echo "You entered $gender"
 ```
+#### from a file
+```bash
+while read f; do
+	echo "$f" # process the line
+done < filename
+```
+
+## Variables
+
+### Declaring / Assigning
+```bash
+MSG1="Hello" # No spaces around the "=" sign
+msg2=World # No need to quote if the value is one word
+echo $MSG1 $msg2
+>>> Hello World
+```
+
+### No types, everything is stored as a string
+```bash
+PI=3.14159
+ALSO_PI="3.14159"
+```
+
+### Escaping
+```bash
+echo "Need to escape: \" \$ \` \\"
+```
+
+### Using in a string context
+```bash
+read USER_NAME
+touch "${USER_NAME}_file"
+```
+
+### Preset variables
+
+#### script parameters: `$#`, `$0-$9`, `$@`
+```bash
+echo "This program was called with $# parameters"
+echo "This program's name is `basename $0`" # `basename` -- return filename of pathname
+echo "The first parameter is $1"
+echo "The second parameter is $2"
+echo "All parameters are $@"
+```
+#### the exit value of the last run command: `$?`
+```bash
+read X
+echo $X | grep "[^0-9]" > /dev/null 2>&1
+[ "$?" -eq "0" ] &&  echo "'$X' is not a number"
+```
+#### PID (Process IDentifier) of the currently running shell: `$$`
+```bash
+echo $$
+```
+#### PID of the last run background process: `$!`
+```bash
+sort words > sorted-words &        # launch the first background process
+p1=$!
+sort -n numbers > sorted-numbers & # launch the second background process
+p2=$!
+wait $p1
+wait $p2
+echo Both files have been sorted.
+```
+
 
 ## File Redirection
 #### output to file, errors to console
@@ -61,7 +172,12 @@ ls --bad-option 2> /dev/null; echo $? # illegal option
 
 ## Control Structures
 
-### Conditions
+### Conditions and `test` -- condition evaluation utility (called as `[`)
+
+#### list of all the operators
+```bash
+help test 
+```
 
 #### Comparing numbers
 ```bash
@@ -92,6 +208,13 @@ elif [ $A -gt 0 -o $B -gt 0 ]; then
 	echo "Either A or B is positive"
 fi
 > Either A or B is positive
+```
+#### Using logic instead of `if` statement
+```bash
+X=3
+Y=4
+[ $X -lt $Y ] && echo "\$X=${X} is smaller than \$Y=${Y}"
+> $X=3 is smaller than $Y=4
 ```
 
 #### Comparing strings
@@ -155,6 +278,7 @@ fi
 case $ch in
 	Y | y) echo "YES";;
 	N | n) echo "NO";;
+	*)     echo "Unexpected input: $ch";;
 esac
 ```
 
@@ -169,19 +293,15 @@ fi
 > File bash.md exists 
 ```
 
-### List of all the operators
-```bash
-help test 
-```
-
 ### Loops
 
 #### `for` loops
 ```bash
-for X in 1 2 3; do
+for X in 1 2 3 hello \* * goodbye # any values 
+do
 	echo -n "$X "
 done
-> 1 2 3
+> 1 2 3 hello * {list of the files in the current folder} goodbye
 ```
 ```bash
 for X in {1..3}; do
@@ -201,9 +321,10 @@ for (( i=1; i<=6; i+=2 )); do
 done
 > 1 3 5
 ```
+#### infinite loop
 ```bash
 i=0
-for (( ; ; )); do # infinite loop
+for (( ; ; )); do 
   i=$((i+1))
   if [ $i -gt 5 ]; then
     break
@@ -230,7 +351,28 @@ while [ $X -le 3 ]; do
 done
 > 1 2 3
 ```
-
+```bash
+while [ "$USER_INPUT" != "bye" ]; do
+  echo "Enter something (\"bye\" to quit)"
+  read USER_INPUT
+  echo "You typed: $USER_INPUT"
+done
+```
+#### infinite loop
+```bash
+i=0
+while :
+do 
+  i=$((i+1))
+  if [ $i -gt 5 ]; then
+    break
+  elif [ $(( $i % 2 )) -eq 0 ]; then
+    continue
+  else
+		echo -n "$i " 
+  fi
+done
+```
 
 ## Arrays
 
@@ -748,3 +890,11 @@ uniq -d
 uniq -u
 ```
 
+## File processing
+
+### `ls` -- list directory contents
+
+#### list multiple folders/subfolders
+```bash
+ls /{usr,usr/local}/{bin,sbin}
+```

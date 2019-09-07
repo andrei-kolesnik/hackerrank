@@ -46,14 +46,14 @@ Long Line"
 ```bash
 echo -n "HELLO " # -n option stops echo from breaking the line
 echo 'WORLD'
-> HELLO WORLD
+>>> HELLO WORLD
 ```
 
 ```bash
 echo Welcome, $USER!
 echo Your current directory is $PWD
-> Welcome, andrei!
-> Your current directory is /Users/andrei/projects
+>>> Welcome, andrei!
+>>> Your current directory is /Users/andrei/projects
 ```
 
 ```bash
@@ -65,8 +65,8 @@ echo *
 ```bash
 read name
 echo Welcome, $name!
-> Andrei
-> Welcome, Andrei!
+>>> Andrei
+>>> Welcome, Andrei!
 ```
 #### with prompt, silent, limited to 1 character
 ```bash
@@ -137,6 +137,43 @@ wait $p1
 wait $p2
 echo Both files have been sorted.
 ```
+#### Internal Field Separator: `$IFS`
+```bash
+old_IFS="$IFS"
+IFS=:
+echo "Input three values separated by colons"
+read x y z
+IFS=$old_IFS
+echo "x is $x; y is $y; z is $z"
+>>> Input three values separated by colons
+>>> Value 1:2:Val3
+>>> x is Value 1; y is 2; z is Val3
+```
+
+### Default values for non-existing variables: `:-` and `:=`
+```bash
+x='existing value for x'
+echo ${x:-'preset value for x'}
+>>> existing value for x
+
+echo ${y:-'preset value for y'} 
+>>> preset value for y
+
+echo ${z:='preset value for z'} 
+>>> preset value for z
+
+# $x was assigned to begin with
+echo $x
+>>> existing value for x
+
+# $y is still not assigned
+echo $y 
+>>>
+
+# but $z is now assigned
+echo $z
+>>> preset value for z
+```
 
 
 ## File Redirection
@@ -187,7 +224,7 @@ if [ $X -lt $Y ]
 then
 	echo "\$X=${X} is smaller than \$Y=${Y}"
 fi
-> $X=3 is smaller than $Y=4
+>>> $X=3 is smaller than $Y=4
 ```
 
 #### Using logic
@@ -207,14 +244,14 @@ if [ $A -gt 0 -a $B -gt 0 ]; then
 elif [ $A -gt 0 -o $B -gt 0 ]; then
 	echo "Either A or B is positive"
 fi
-> Either A or B is positive
+>>> Either A or B is positive
 ```
 #### Using logic instead of `if` statement
 ```bash
 X=3
 Y=4
 [ $X -lt $Y ] && echo "\$X=${X} is smaller than \$Y=${Y}"
-> $X=3 is smaller than $Y=4
+>>> $X=3 is smaller than $Y=4
 ```
 
 #### Comparing strings
@@ -225,19 +262,19 @@ Y=""
 if [ -n "$X" ]; then
   echo "Variable X is not empty"
 fi
-> Variable X is not empty
+>>> Variable X is not empty
 ```
 ```bash
 if [ ! -n "$Y" ]; then
   echo "Variable Y is empty"
 fi
-> Variable Y is empty
+>>> Variable Y is empty
 ```
 ```bash
 if [ $X != "Text" ]; then
   echo "Variable X is not 'Text'"
 fi
-> Variable X is not 'Text'
+>>> Variable X is not 'Text'
 ```
 ```bash
 if [ "$X" = "$Y" ]; then
@@ -290,7 +327,7 @@ if [ -e $file ]; then
 else
 	echo File $file does not exist
 fi
-> File bash.md exists 
+>>> File bash.md exists 
 ```
 
 ### Loops
@@ -301,25 +338,25 @@ for X in 1 2 3 hello \* * goodbye # any values
 do
 	echo -n "$X "
 done
-> 1 2 3 hello * {list of the files in the current folder} goodbye
+>>> 1 2 3 hello * {list of the files in the current folder} goodbye
 ```
 ```bash
 for X in {1..3}; do
 	echo -n "$X "
 done
-> 1 2 3
+>>> 1 2 3
 ```
 ```bash
 for X in {1..5..2}; do # Bash versions 4.0+ 
 	echo -n "$X "
 done
-> 1 2 3
+>>> 1 2 3
 ```
 ```bash
 for (( i=1; i<=6; i+=2 )); do 
 	echo -n "$i " 
 done
-> 1 3 5
+>>> 1 3 5
 ```
 #### infinite loop
 ```bash
@@ -334,12 +371,12 @@ for (( ; ; )); do
 		echo -n "$i " 
   fi
 done
-> 1 3 5
+>>> 1 3 5
 ```
 #### using `seq` command (outdated)
 ```bash
 echo `seq 1 2 5` # "echo" to convert new lines into spaces
-> 1 3 5
+>>> 1 3 5
 ```
 
 #### `while` Loops
@@ -349,7 +386,7 @@ while [ $X -le 3 ]; do
 	echo -n "$X "
 	X=$((X+1)) # alternative: 	X=`expr $X + 1`
 done
-> 1 2 3
+>>> 1 2 3
 ```
 ```bash
 while [ "$USER_INPUT" != "bye" ]; do
@@ -549,26 +586,26 @@ echo ${os[@]}
 ```bash
 files=$(ls)
 echo "$files" # double quotes to preserve new lines (otherwise converted to spaces)
-> test.sh
-> ...
+>>> test.sh
+>>> ...
 ```
 ```bash
 X=$(expr 2 + $(expr 1 + 2)) # can be nested
 echo $X
-> 5
+>>> 5
 ```
 
 ### Back-tick Expansion: `` `command` ``
 ```bash
 files=`ls`
 echo "$files" # double quotes to preserve new lines (otherwise converted to spaces)
-> test.sh
-> ...
+>>> test.sh
+>>> ...
 ```
 ```bash
 X=`expr 2 + 3` # cannot be nested
 echo $X
-> 5
+>>> 5
 ```
 
 ### Arithmetic Expansion: `$((expression))`
@@ -577,7 +614,7 @@ num1=1
 num2=2
 num3=3
 echo $(($num1+$num2*$num3))
-> 7
+>>> 7
 ```
 
 ### Rounding/scaling

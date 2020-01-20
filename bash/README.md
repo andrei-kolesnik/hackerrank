@@ -107,6 +107,63 @@ read USER_NAME
 touch "${USER_NAME}_file"
 ```
 
+### Basic string manipulations
+
+#### length
+```bash
+str ="Abcd"
+echo ${#str} #=> 4
+```
+
+#### default values
+```bash
+STR ="Abcd"
+${STR:-val}	$STR, or val if not set
+${STR:=val}	Set $STR to val if not set
+${STR:+val}	val if $STR is set
+${STR:?message}	Show error message and exit if $STR is not set
+```
+
+#### substrings
+```bash
+STR="Abcd"
+echo ${STR}        #=> "Abcd"
+echo ${STR:0:2}    #=> "Ab" (slicing)
+echo ${STR::2}     #=> "Ab" (slicing)
+echo ${STR::-1}    #=> "Abc" (slicing)
+echo ${STR:(-1)}   #=> "d" (slicing from right)
+echo ${STR:(-2):1} #=> "c" (slicing from right)
+```
+
+#### substitutions
+```bash
+STR="/path/to/file.php"
+echo ${STR%.php}     # /path/to/file
+echo ${STR%.php}.bak # /path/to/file.bak
+
+echo ${STR##*.}      # php (extension)
+echo ${STR##*/}      # file.php (basepath)
+
+echo ${STR#*/}       # path/to/file.php
+echo ${STR##*/}      # file.php
+
+echo ${STR/file/index} # /path/to/index.php
+
+BASE=${STR##*/}   #=> "file.php" (basepath)
+DIR=${STR%$BASE}  #=> "/path/to/" (dirpath)
+```
+
+#### change case
+```bash
+STR="HELLO WORLD"
+echo ${STR,}   #=> "hELLO WORLD" (lowercase 1st letter)
+echo ${STR,,}  #=> "hello world" (all lowercase)
+
+STR="hello world"
+echo ${STR^}   #=> "Hello world" (uppercase 1st letter)
+echo ${STR^^}  #=> "HELLO WORLD" (all uppercase)
+```
+
 ### Preset variables
 
 #### script parameters: `$#`, `$0-$9`, `$@`
@@ -661,6 +718,10 @@ awk '{ print ($2 == "" || $3 == "") ? "Required fields are missing" : "Record is
 #### concatenate every 2 lines of input with a semicolon
 ```bash
 awk 'ORS = NR%2 ? ";" : "\n"'
+```
+#### remove duplicate lines in file (output unique lines only)
+```bash
+awk '!seen[$0]++' filename
 ```
 
 ### `cat` -- concatenate and print files

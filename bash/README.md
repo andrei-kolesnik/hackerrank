@@ -111,17 +111,17 @@ touch "${USER_NAME}_file"
 
 #### length
 ```bash
-str ="Abcd"
-echo ${#str} #=> 4
+STR ="Abcd"
+echo ${#STR} #=> 4
 ```
 
 #### default values
 ```bash
 STR ="Abcd"
-${STR:-val}	$STR, or val if not set
-${STR:=val}	Set $STR to val if not set
-${STR:+val}	val if $STR is set
-${STR:?message}	Show error message and exit if $STR is not set
+${STR:-val}	    # $STR, or val if not set
+${STR:=val}	    # Set $STR to val if not set
+${STR:+val}	    # val if $STR is set
+${STR:?message}	# Show error message and exit if $STR is not set
 ```
 
 #### substrings

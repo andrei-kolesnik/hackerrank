@@ -172,7 +172,8 @@ echo "This program was called with $# parameters"
 echo "This program's name is `basename $0`" # `basename` -- return filename of pathname
 echo "The first parameter is $1"
 echo "The second parameter is $2"
-echo "All parameters are $@"
+echo "All parameters are $*"
+echo "All parameters in array, individually quoted, are $@"
 ```
 #### the exit value of the last run command: `$?`
 ```bash

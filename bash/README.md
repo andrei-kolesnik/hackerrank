@@ -1,5 +1,5 @@
 # Linux / Bash Shell Guide
-
+--- 
 ## General Syntax
 
 #### Creating a new script file
@@ -21,7 +21,7 @@ chmod 755 test.sh
 
 >>> Hello World!
 ```
-
+---
 ### Comments
 ```bash
 # This is a comment
@@ -40,7 +40,7 @@ echo "Long \
 Long Line"
 >>> Long Long Line
 ```
-
+---
 ## Output
 
 ```bash
@@ -60,7 +60,7 @@ echo Your current directory is $PWD
 echo *
 >>> {list of the files in the current folder, same as `ls`}
 ```
-
+---
 ## Input
 ```bash
 read name
@@ -79,7 +79,7 @@ while read f; do
 	echo "$f" # process the line
 done < filename
 ```
-
+---
 ## Variables
 
 ### Declaring / Assigning
@@ -175,7 +175,7 @@ echo $z
 >>> preset value for z
 ```
 
-
+---
 ## File Redirection
 #### output to file, errors to console
 ```bash
@@ -207,6 +207,7 @@ ls --bad-option 2> /dev/null; echo $? # illegal option
 >>> 127
 ```
 
+---
 ## Control Structures
 
 ### Conditions and `test` -- condition evaluation utility (called as `[`)
@@ -329,7 +330,7 @@ else
 fi
 >>> File bash.md exists 
 ```
-
+---
 ### Loops
 
 #### `for` loops
@@ -410,7 +411,7 @@ do
   fi
 done
 ```
-
+---
 ## Arrays
 
 ### Declaring and Assigning
@@ -446,9 +447,19 @@ do
     os=("${os[@]}" $line)
 done
 ```
-#### space separated
+#### line separated if output contains spaces
+```bash
+IFS=$'\n'
+os=( $(cat) )
+unset IFS
+```
+#### space separated from input
 ```bash
 read -a os 
+```
+#### space separated from a variable
+```bash
+read -a os <<< "$var"
 ```
 #### from file (word by word)
 ```bash
@@ -579,7 +590,7 @@ os=( ${os[@]/*[Aa]*/} )
 echo ${os[@]}
 >>> Unix Windows
 ```
-
+---
 ## Command Substitution
 
 ### Brace Expansion: `$(command)`
@@ -639,9 +650,9 @@ printf "%.3f\n" $(echo "2/3" | bc -l)
 >>> .667	
 ```
 
-
+---
 ## Text processing
-
+---
 ### `awk` -- pattern-directed scanning and processing language
 
 #### print all the lines in a file
@@ -699,7 +710,7 @@ awk '{ print ($2 == "" || $3 == "") ? "Required fields are missing" : "Record is
 ```bash
 awk 'ORS = NR%2 ? ";" : "\n"'
 ```
-
+---
 ### `cat` -- concatenate and print files
 
 #### create a file from command line
@@ -710,7 +721,7 @@ cat > filename # press [Enter]
 # press [Ctrl+Z] when done
 >>> [1]+  Stopped cat > filename
 ```
-
+---
 ### `cut` -- cut out selected portions of each line of a file
 
 #### 3rd character on every line of a file
@@ -741,7 +752,7 @@ cut -f-3 filename
 ```bash
 cut -d ' ' -f4 filename
 ```
-
+---
 ### `grep` -- file pattern searcher
 
 #### search for the given string in a single file
@@ -768,19 +779,20 @@ grep -r "literal_string" *.log
 ```bash
 grep -v "the"
 ```
-
+---
 ### `head` -- display first lines of a file
 
 #### first 20 lines of an input file
 ```bash
-head -n20
-head -20 # or
+head -n20 filename
+head -n 20 filename # or
+head -20 filename # or
 ```
 #### first 20 characters
 ```bash
-head -c20
+head -c20 filename
 ```
-
+---
 ### `paste` -- merge corresponding or subsequent lines of files
 
 #### join all lines using the comma delimiter
@@ -803,7 +815,7 @@ paste -d ':,' - - - < filename
 ```bash
 paste -d, filename1 filename2
 ```
-
+---
 ### `sed` -- stream editor
 
 #### change one word to another once
@@ -839,7 +851,7 @@ sed '/word/p'
 echo "1234 1234 1234 1234" | sed -E 's/[0-9]{4} /**** /g' # -E on mac, -r on LINUX
 >>> **** **** **** 1234
 ```
-
+---
 ### `sort` -- sort or merge records (lines) of text and binary files
 
 #### sort a file in alphabetical order
@@ -862,19 +874,24 @@ sort -k2
 ```bash
 sort -k2n,2 -k3r,3 -t $'-'
 ```
-
+---
 ### `tail` -- display the last part of a file
 
 #### last 20 lines
 ```bash
-tail -n20
-tail -20 # or
+tail -n 20 filename
+tail -n20 filename # or
+tail - 20 filename # or
+```
+#### all lines since line# 20
+```bash
+tail -n +20 filename
 ```
 #### last 20 characters
 ```bash
-tail -c20
+tail -c 20 filename
 ```
-
+---
 ### `tr` -- translate characters
 
 #### replace all parentheses () with box brackets []
@@ -907,7 +924,7 @@ tr -cd [:print:]
 ```bash
 tr -s '\n' ' '
 ```
-
+---
 ### `uniq` -- report or filter out repeated lines in a file
 
 #### remove duplicate lines and display unique lines 
@@ -926,9 +943,28 @@ uniq -d
 ```bash
 uniq -u
 ```
+---
+### `wc` -- word, line, character, and byte count
 
+#### count lines in file
+```bash
+wc -l filename
+```
+#### count words in file
+```bash
+wc -w filename
+```
+#### count characters (bytes) in file
+```bash
+wc -c filename
+```
+#### count characters (multi-byte ) in file
+```bash
+wc -m filename
+```
+---
 ## File processing
-
+---
 ### `ls` -- list directory contents
 
 #### list multiple folders/subfolders
